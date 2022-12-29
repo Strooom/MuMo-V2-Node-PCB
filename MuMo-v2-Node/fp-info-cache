@@ -1,4 +1,4 @@
-20542175389490988
+20543847714844787
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -86386,6 +86386,13 @@ USB Type-C Receptacle Through-hole Right angle
 0
 20
 17
+thisProjectLibrary
+chamferedCorner
+
+
+0
+0
+0
 thisProjectLibrary
 eInk Display 1.54inch 200x200px
 

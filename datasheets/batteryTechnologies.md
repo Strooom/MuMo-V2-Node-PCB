@@ -1,1 +1,0 @@
-[Batteries Compared](https://en.wikipedia.org/wiki/Comparison_of_commercial_battery_types)

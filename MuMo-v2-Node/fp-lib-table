@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "thisProjectLibrary")(type "KiCad")(uri "C:/Users/pasca/Documents/Projects/UA/MuMo-v2-Node-PCB/libraries/thisProjectLibrary.pretty")(options "")(descr ""))
+)

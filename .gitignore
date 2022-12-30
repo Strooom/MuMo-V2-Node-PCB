@@ -64,6 +64,7 @@ firmware.elf
 
 
 # #############################
-# ### VSCodeCounter         ###
+# ### KiCAD backups         ###
 # #############################
-.VSCodeCounter/*
+MuMo-v2-Node\MuMo-v2-Node-backups\*
+

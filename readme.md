@@ -8,4 +8,6 @@
 * ePaper display allows to identify the device, and read status from the display, while still being ultra low power.
 
 
+The related firmware for this device can be found in https://github.com/Strooom/MuMo-v2-Node-SW
+
 ![PCB Render Top view](https://github.com/Strooom/MuMo-V2-Node-PCB/blob/main/PCB%203D%20view%20Top.PNG "PCB Render Top view")

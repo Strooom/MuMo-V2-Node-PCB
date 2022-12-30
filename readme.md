@@ -6,3 +6,5 @@
 * LoRa-E5 module contains an STM32WLE processor combined with Semtech SX126X radio. The firmware runs directly on the STM32
 * 64 KByte of onboard EEPROM allows to buffer sensor-readings when network is unavailable.
 
+
+![PCB Render Top view](https://github.com/Strooom/MuMo-V2-Node-PCB/blob/main/PCB%203D%20view%20Top.PNG "PCB Render Top view")

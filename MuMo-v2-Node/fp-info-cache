@@ -1,4 +1,4 @@
-20542175389803605
+20548865307754532
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -86289,6 +86289,13 @@ varistor
 2
 2
 thisProjectLibrary
+0603_1608Metric
+Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+thisProjectLibrary
 Bosch_BME680
 Bosch  LGA, 8 Pin (https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME680-DS001-00.pdf#page=44), generated with kicad-footprint-generator ipc_noLead_generator.py
 Bosch LGA NoLead
@@ -86302,6 +86309,13 @@ DFN10
 0
 11
 11
+thisProjectLibrary
+GCT_USB4105-GF-A
+
+
+0
+16
+13
 thisProjectLibrary
 Grove_Vertical
 
@@ -86330,6 +86344,13 @@ LoRa-E5
 0
 28
 28
+thisProjectLibrary
+Molex-2171790001
+
+
+0
+16
+13
 thisProjectLibrary
 QFN24 - CP2102N
 
@@ -86381,6 +86402,13 @@ TSSOP SO
 8
 thisProjectLibrary
 USB_C_Receptacle_GCT_USB4085
+USB 2.0 Type C Receptacle, https://gct.co/Files/Drawings/USB4085.pdf
+USB Type-C Receptacle Through-hole Right angle
+0
+20
+17
+thisProjectLibrary
+USB_C_Receptacle_GCT_USB4085n
 USB 2.0 Type C Receptacle, https://gct.co/Files/Drawings/USB4085.pdf
 USB Type-C Receptacle Through-hole Right angle
 0

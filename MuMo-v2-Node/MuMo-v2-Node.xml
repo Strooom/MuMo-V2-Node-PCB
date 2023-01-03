@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\pasca\Documents\Projects\UA\MuMo-v2-Node-PCB\MuMo-v2-Node\MuMo-v2-Node.kicad_sch</source>
-    <date>30/12/2022 14:59:54</date>
+    <date>03/01/2023 09:58:22</date>
     <tool>Eeschema (6.0.8)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -26,7 +26,7 @@
   <components>
     <comp ref="C1">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -37,6 +37,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="supplier1Name" value="Mouser"/>
@@ -52,6 +53,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -59,7 +61,7 @@
     </comp>
     <comp ref="C2">
       <value>10uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="PACKAGE">0603</field>
@@ -71,6 +73,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X6S1A106M</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X6S1A106M080AC?qs=dfay7wIA1uH1Z78SvgoYOQ%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -87,6 +90,7 @@
       <property name="stock" value="180000"/>
       <property name="mpn" value="C1608X6S1A106M080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -94,7 +98,7 @@
     </comp>
     <comp ref="C3">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -105,6 +109,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -120,6 +125,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -127,7 +133,7 @@
     </comp>
     <comp ref="C4">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT CGA 0603 25V 0.1uF X7R 10% AEC-Q200</field>
@@ -138,6 +144,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-CGA3E2X7R1E104K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/CGA3E2X7R1E104K080AA?qs=NRhsANhppD%2Fm7%2FOmmsm0vg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -153,6 +160,7 @@
       <property name="stock" value="480000"/>
       <property name="mpn" value="CGA3E2X7R1E104K080AA"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -160,7 +168,7 @@
     </comp>
     <comp ref="C5">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -171,6 +179,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -186,6 +195,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -193,7 +203,7 @@
     </comp>
     <comp ref="C6">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT CGA 0603 25V 0.1uF X7R 10% AEC-Q200</field>
@@ -204,6 +214,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-CGA3E2X7R1E104K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/CGA3E2X7R1E104K080AA?qs=NRhsANhppD%2Fm7%2FOmmsm0vg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -219,6 +230,7 @@
       <property name="stock" value="480000"/>
       <property name="mpn" value="CGA3E2X7R1E104K080AA"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -226,7 +238,7 @@
     </comp>
     <comp ref="C7">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -237,6 +249,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -252,6 +265,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -259,7 +273,7 @@
     </comp>
     <comp ref="C8">
       <value>1uF/50V</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 50VDC 1uF 10% X5R 0.8mm</field>
@@ -270,6 +284,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X5R1H105K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X5R1H105K080AB?qs=NRhsANhppD%252BLmxnPDqAv3A%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.2</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -288,6 +303,7 @@
       <property name="unitPrice" value="0.2"/>
       <property name="mpn" value="C1608X5R1H105K080AB"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -295,7 +311,7 @@
     </comp>
     <comp ref="C9">
       <value>1uF/50V</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 50VDC 1uF 10% X5R 0.8mm</field>
@@ -306,6 +322,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X5R1H105K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X5R1H105K080AB?qs=NRhsANhppD%252BLmxnPDqAv3A%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.2</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -324,6 +341,7 @@
       <property name="unitPrice" value="0.2"/>
       <property name="mpn" value="C1608X5R1H105K080AB"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -331,7 +349,7 @@
     </comp>
     <comp ref="C10">
       <value>1uF/50V</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 50VDC 1uF 10% X5R 0.8mm</field>
@@ -342,6 +360,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X5R1H105K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X5R1H105K080AB?qs=NRhsANhppD%252BLmxnPDqAv3A%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.2</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -360,6 +379,7 @@
       <property name="unitPrice" value="0.2"/>
       <property name="mpn" value="C1608X5R1H105K080AB"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -367,7 +387,7 @@
     </comp>
     <comp ref="C11">
       <value>1uF/50V</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 50VDC 1uF 10% X5R 0.8mm</field>
@@ -378,6 +398,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X5R1H105K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X5R1H105K080AB?qs=NRhsANhppD%252BLmxnPDqAv3A%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.2</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -396,6 +417,7 @@
       <property name="unitPrice" value="0.2"/>
       <property name="mpn" value="C1608X5R1H105K080AB"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -403,7 +425,7 @@
     </comp>
     <comp ref="C12">
       <value>10uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="PACKAGE">0603</field>
@@ -415,6 +437,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X6S1A106M</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X6S1A106M080AC?qs=dfay7wIA1uH1Z78SvgoYOQ%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -431,6 +454,7 @@
       <property name="stock" value="180000"/>
       <property name="mpn" value="C1608X6S1A106M080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -438,7 +462,7 @@
     </comp>
     <comp ref="C13">
       <value>1uF/50V</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 50VDC 1uF 10% X5R 0.8mm</field>
@@ -449,6 +473,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X5R1H105K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X5R1H105K080AB?qs=NRhsANhppD%252BLmxnPDqAv3A%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.2</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -467,6 +492,7 @@
       <property name="unitPrice" value="0.2"/>
       <property name="mpn" value="C1608X5R1H105K080AB"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -474,7 +500,7 @@
     </comp>
     <comp ref="C14">
       <value>1uF/50V</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 50VDC 1uF 10% X5R 0.8mm</field>
@@ -485,6 +511,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X5R1H105K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X5R1H105K080AB?qs=NRhsANhppD%252BLmxnPDqAv3A%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.2</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -503,6 +530,7 @@
       <property name="unitPrice" value="0.2"/>
       <property name="mpn" value="C1608X5R1H105K080AB"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -510,7 +538,7 @@
     </comp>
     <comp ref="C15">
       <value>1uF/50V</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 50VDC 1uF 10% X5R 0.8mm</field>
@@ -521,6 +549,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X5R1H105K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X5R1H105K080AB?qs=NRhsANhppD%252BLmxnPDqAv3A%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.2</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -539,6 +568,7 @@
       <property name="unitPrice" value="0.2"/>
       <property name="mpn" value="C1608X5R1H105K080AB"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -546,7 +576,7 @@
     </comp>
     <comp ref="C16">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -557,6 +587,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -572,6 +603,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -579,7 +611,7 @@
     </comp>
     <comp ref="C17">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -590,6 +622,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -605,6 +638,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -612,7 +646,7 @@
     </comp>
     <comp ref="C18">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -623,6 +657,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -638,6 +673,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -645,7 +681,7 @@
     </comp>
     <comp ref="C19">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -656,6 +692,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -671,6 +708,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -678,7 +716,7 @@
     </comp>
     <comp ref="C20">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -689,6 +727,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -704,6 +743,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -711,7 +751,7 @@
     </comp>
     <comp ref="C21">
       <value>4u7</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 0603 10V 4.7uF X7S 10% T: 0.8mm</field>
@@ -722,6 +762,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-C1608X7S1A475KAC</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/C1608X7S1A475K080AC?qs=d72FGnIDsgRAO1hqT8K2Cw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -737,6 +778,7 @@
       <property name="stock" value="660000"/>
       <property name="mpn" value="C1608X7S1A475K080AC"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -744,7 +786,7 @@
     </comp>
     <comp ref="C22">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT CGA 0603 25V 0.1uF X7R 10% AEC-Q200</field>
@@ -755,6 +797,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-CGA3E2X7R1E104K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/CGA3E2X7R1E104K080AA?qs=NRhsANhppD%2Fm7%2FOmmsm0vg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -770,6 +813,7 @@
       <property name="stock" value="480000"/>
       <property name="mpn" value="CGA3E2X7R1E104K080AA"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -777,7 +821,7 @@
     </comp>
     <comp ref="C23">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT CGA 0603 25V 0.1uF X7R 10% AEC-Q200</field>
@@ -788,6 +832,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-CGA3E2X7R1E104K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/CGA3E2X7R1E104K080AA?qs=NRhsANhppD%2Fm7%2FOmmsm0vg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -803,6 +848,7 @@
       <property name="stock" value="480000"/>
       <property name="mpn" value="CGA3E2X7R1E104K080AA"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -810,7 +856,7 @@
     </comp>
     <comp ref="C24">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT CGA 0603 25V 0.1uF X7R 10% AEC-Q200</field>
@@ -821,6 +867,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-CGA3E2X7R1E104K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/CGA3E2X7R1E104K080AA?qs=NRhsANhppD%2Fm7%2FOmmsm0vg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -836,6 +883,7 @@
       <property name="stock" value="480000"/>
       <property name="mpn" value="CGA3E2X7R1E104K080AA"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -843,7 +891,7 @@
     </comp>
     <comp ref="C25">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT CGA 0603 25V 0.1uF X7R 10% AEC-Q200</field>
@@ -854,6 +902,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-CGA3E2X7R1E104K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/CGA3E2X7R1E104K080AA?qs=NRhsANhppD%2Fm7%2FOmmsm0vg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -869,6 +918,7 @@
       <property name="stock" value="480000"/>
       <property name="mpn" value="CGA3E2X7R1E104K080AA"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -876,7 +926,7 @@
     </comp>
     <comp ref="C26">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT CGA 0603 25V 0.1uF X7R 10% AEC-Q200</field>
@@ -887,6 +937,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-CGA3E2X7R1E104K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/CGA3E2X7R1E104K080AA?qs=NRhsANhppD%2Fm7%2FOmmsm0vg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -902,6 +953,7 @@
       <property name="stock" value="480000"/>
       <property name="mpn" value="CGA3E2X7R1E104K080AA"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -909,7 +961,7 @@
     </comp>
     <comp ref="C27">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf?ref_disty=mouser</datasheet>
       <fields>
         <field name="description">Multilayer Ceramic Capacitors MLCC - SMD/SMT CGA 0603 25V 0.1uF X7R 10% AEC-Q200</field>
@@ -920,6 +972,7 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-CGA3E2X7R1E104K</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/CGA3E2X7R1E104K080AA?qs=NRhsANhppD%2Fm7%2FOmmsm0vg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="AVAILABILITY" value=""/>
@@ -935,6 +988,7 @@
       <property name="stock" value="480000"/>
       <property name="mpn" value="CGA3E2X7R1E104K080AA"/>
       <property name="package" value="0603-1608"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -943,30 +997,51 @@
     <comp ref="CONN1">
       <value>SWD</value>
       <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
-      <datasheet>notApplicable</datasheet>
+      <datasheet>https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_econostik_254headers.pdf</datasheet>
       <fields>
-        <field name="mpn">notApplicable</field>
-        <field name="supplier1Name">notApplicable</field>
+        <field name="description">3-pin Header 2.54mm</field>
+        <field name="manufacturer">Amphenol FCI</field>
+        <field name="mpn">10129378-903001BLF</field>
+        <field name="package">2.54mm pitch</field>
+        <field name="stock">16800</field>
+        <field name="supplier1Name">Mouser</field>
+        <field name="supplier1PartNumber">649-1012937890301BLF</field>
+        <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Amphenol-FCI/10129378-903001BLF?qs=0lQeLiL1qybuYTJnitumiA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="unitPrice">0.1</field>
       </fields>
       <libsource lib="Connector" part="Conn_01x03_Male" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
-      <property name="supplier1Name" value="notApplicable"/>
-      <property name="mpn" value="notApplicable"/>
+      <property name="supplier1Name" value="Mouser"/>
+      <property name="mpn" value="10129378-903001BLF"/>
+      <property name="manufacturer" value="Amphenol FCI"/>
+      <property name="package" value="2.54mm pitch"/>
+      <property name="stock" value="16800"/>
+      <property name="supplier1PartNumber" value="649-1012937890301BLF"/>
+      <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Amphenol-FCI/10129378-903001BLF?qs=0lQeLiL1qybuYTJnitumiA%3D%3D"/>
+      <property name="unitPrice" value="0.1"/>
+      <property name="description" value="3-pin Header 2.54mm"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a320ea25-597c-4a37-9203-a857332e2350</tstamps>
     </comp>
     <comp ref="CONN2">
-      <value>LiFePO4 Battery</value>
+      <value>B2B-XH-A (LF)(SN)</value>
       <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
       <datasheet>https://www.farnell.com/datasheets/2057209.pdf</datasheet>
       <fields>
+        <field name="description">JST XH 2pin THT Vertical</field>
         <field name="manufacturer">JST</field>
         <field name="mpn">B2B-XH-A (LF)(SN)</field>
+        <field name="remark">LiFePO4 Battery</field>
         <field name="stock">1500000</field>
         <field name="supplier1Name">Farnell</field>
         <field name="supplier1PartNumber">1516276</field>
         <field name="supplier1PartURL">https://be.farnell.com/jst-japan-solderless-terminals/b2b-xh-a-lf-sn/header-vertical-2way/dp/1516276</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">455-2247-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/jst-sales-america-inc/B2B-XH-A-LF-SN/1651045</field>
         <field name="unitPrice">0.09</field>
       </fields>
       <libsource lib="Connector" part="Conn_01x02_Female" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
@@ -978,6 +1053,11 @@
       <property name="stock" value="1500000"/>
       <property name="supplier1PartNumber" value="1516276"/>
       <property name="unitPrice" value="0.09"/>
+      <property name="description" value="JST XH 2pin THT Vertical"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="455-2247-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/jst-sales-america-inc/B2B-XH-A-LF-SN/1651045"/>
+      <property name="remark" value="LiFePO4 Battery"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -988,10 +1068,15 @@
       <footprint>thisProjectLibrary:TE_2-1734839-4_1x24-1MP_P0.5mm_Horizontal</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/418/7/ENG_CD_1734839_C_C_1734839-2017341.pdf</datasheet>
       <fields>
+        <field name="description">FFC &amp; FPC connectoren FPC CONN 0.5MM PITCH T/C 24P</field>
         <field name="manufacturer">TE Connectivity</field>
+        <field name="mpn">2-1734839-4</field>
+        <field name="package">24-pin FPC top copntact 0.5mm pitch</field>
+        <field name="stock">9000</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">571-2-1734839-4</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TE-Connectivity/2-1734839-4?qs=Sm6ibA7evxgHWeCe9t1tOw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">1.16</field>
       </fields>
       <libsource lib="Connector_Generic" part="Conn_01x24" description="Generic connector, single row, 01x24, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
@@ -1003,45 +1088,74 @@
       <property name="MF" value=""/>
       <property name="manufacturer" value="TE Connectivity"/>
       <property name="unitPrice" value="1.16"/>
+      <property name="description" value="FFC &amp; FPC connectoren FPC CONN 0.5MM PITCH T/C 24P"/>
+      <property name="mpn" value="2-1734839-4"/>
+      <property name="package" value="24-pin FPC top copntact 0.5mm pitch"/>
+      <property name="stock" value="9000"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>1335b916-af85-4a1c-ab6a-f0bfc193bc3c</tstamps>
     </comp>
     <comp ref="CONN4">
-      <value>USB-C</value>
-      <footprint>thisProjectLibrary:USB_C_Receptacle_GCT_USB4085</footprint>
-      <datasheet>https://www.usb.org/sites/default/files/documents/usb_type-c.zip</datasheet>
+      <value>Molex-2171790001</value>
+      <footprint>thisProjectLibrary:Molex-2171790001</footprint>
+      <datasheet>https://www.mouser.be/datasheet/2/837/USB4105-2888174.pdf</datasheet>
       <fields>
-        <field name="mpn">USB4085-GF-A</field>
-        <field name="stock">11535</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">3.31 mm</field>
+        <field name="PARTREV">A3</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="description">USB-C receptable</field>
+        <field name="manufacturer">Molex</field>
+        <field name="mpn">2171790001</field>
+        <field name="package">SMT - 16-pin</field>
+        <field name="stock">18000</field>
         <field name="supplier1Name">Mouser</field>
-        <field name="supplier1PartNumber">640-USB4085-GF-A</field>
-        <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/GCT/USB4085-GF-A?qs=KUoIvG%2F9Ilba1bQOahfWjw%3D%3D</field>
-        <field name="unitPrice">0.93</field>
+        <field name="supplier1PartNumber">538-217179-0001</field>
+        <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Molex/217179-0001?qs=DRkmTr78QAQqCH4BoIR1xg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">900-2171790001CT-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/molex/2171790001/13913749?s=N4IgTCBcDa4IwHZEE4AM64gLoF8g</field>
+        <field name="unitPrice">1.19</field>
       </fields>
-      <libsource lib="Connector" part="USB_C_Receptacle_USB2.0" description="USB 2.0-only Type-C Receptacle connector"/>
-      <property name="mpn" value="USB4085-GF-A"/>
-      <property name="stock" value="11535"/>
+      <libsource lib="thisProjectLibrary" part="Molex-2171790001" description="USB-C Receptable"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="3.31 mm"/>
+      <property name="MANUFACTURER" value=""/>
+      <property name="PARTREV" value="A3"/>
+      <property name="STANDARD" value="Manufacturer Recommendations"/>
+      <property name="description" value="USB-C receptable"/>
+      <property name="manufacturer" value="Molex"/>
+      <property name="mpn" value="2171790001"/>
+      <property name="package" value="SMT - 16-pin"/>
       <property name="supplier1Name" value="Mouser"/>
-      <property name="supplier1PartNumber" value="640-USB4085-GF-A"/>
-      <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/GCT/USB4085-GF-A?qs=KUoIvG%2F9Ilba1bQOahfWjw%3D%3D"/>
-      <property name="unitPrice" value="0.93"/>
+      <property name="stock" value="18000"/>
+      <property name="supplier1PartNumber" value="538-217179-0001"/>
+      <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Molex/217179-0001?qs=DRkmTr78QAQqCH4BoIR1xg%3D%3D"/>
+      <property name="unitPrice" value="1.19"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="900-2171790001CT-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/molex/2171790001/13913749?s=N4IgTCBcDa4IwHZEE4AM64gLoF8g"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b69f9c56-1e9e-4a52-af22-0a202d157d45</tstamps>
+      <tstamps>cb373c0d-a1db-4df5-af06-f1d027233a6a</tstamps>
     </comp>
     <comp ref="CONN5">
       <value>External Antenna</value>
       <footprint>thisProjectLibrary:LINX_CONSMA020.062-G</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/238/LNNC_S_A0009753564_1-2551086.pdf</datasheet>
       <fields>
+        <field name="description">RF-stekkers/Coaxiale stekkers SMA, Edge Mount, Female Receptacle, 0.062" PCB Mount, Gold</field>
         <field name="manufacturer">Linx Technologies</field>
         <field name="mpn">CONSMA020.062-G</field>
+        <field name="stock">6400</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">712-CONSMA020.062-G</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Linx-Technologies/CONSMA020.062-G?qs=xZ%2FP%252Ba9zWqa7zEs9%2FuMaNQ%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">343-CONSMA020.062-G-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/linx-technologies-inc/CONSMA020-062-G/11482822?s=N4IgTCBcDaIMIHkByBlAsgQQAxiwOiwDYwBaAcRAF0BfIA</field>
         <field name="unitPrice">3.93</field>
       </fields>
       <libsource lib="Connector" part="Conn_Coaxial_Power" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
@@ -1051,6 +1165,11 @@
       <property name="manufacturer" value="Linx Technologies"/>
       <property name="mpn" value="CONSMA020.062-G"/>
       <property name="unitPrice" value="3.93"/>
+      <property name="description" value="RF-stekkers/Coaxiale stekkers SMA, Edge Mount, Female Receptacle, 0.062&quot; PCB Mount, Gold"/>
+      <property name="stock" value="6400"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="343-CONSMA020.062-G-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/linx-technologies-inc/CONSMA020-062-G/11482822?s=N4IgTCBcDaIMIHkByBlAsgQQAxiwOiwDYwBaAcRAF0BfIA"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1064,12 +1183,17 @@
         <field name="MAXIMUM_PACKAGE_HEIGHT">8.1mm</field>
         <field name="PARTREV">A</field>
         <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="description">Grove THT Vertical PCB Male connector</field>
         <field name="manufacturer">Seeed Technology</field>
         <field name="mpn">110990030</field>
         <field name="remark">10 pcs in 1 bag</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">713-110990030</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Seeed-Studio/110990030?qs=1%252B9yuXKSi8Dw9fpnq%252BdNzQ%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">1597-1082-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/seeed-technology-co-ltd/110990030/5482560</field>
         <field name="unitPrice">0.17</field>
       </fields>
       <libsource lib="thisProjectLibrary" part="Grove-4P" description=""/>
@@ -1084,6 +1208,11 @@
       <property name="supplier1PartNumber" value="713-110990030"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Seeed-Studio/110990030?qs=1%252B9yuXKSi8Dw9fpnq%252BdNzQ%3D%3D"/>
       <property name="unitPrice" value="0.17"/>
+      <property name="description" value="Grove THT Vertical PCB Male connector"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="1597-1082-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/seeed-technology-co-ltd/110990030/5482560"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1097,12 +1226,17 @@
         <field name="MAXIMUM_PACKAGE_HEIGHT">8.1mm</field>
         <field name="PARTREV">A</field>
         <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="description">Grove THT Vertical PCB Male connector</field>
         <field name="manufacturer">Seeed Technology</field>
         <field name="mpn">110990030</field>
         <field name="remark">10 pcs in 1 bag</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">713-110990030</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Seeed-Studio/110990030?qs=1%252B9yuXKSi8Dw9fpnq%252BdNzQ%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">1597-1082-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/seeed-technology-co-ltd/110990030/5482560</field>
         <field name="unitPrice">0.17</field>
       </fields>
       <libsource lib="" part="Grove-4P_1" description=""/>
@@ -1117,6 +1251,11 @@
       <property name="supplier1PartNumber" value="713-110990030"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Seeed-Studio/110990030?qs=1%252B9yuXKSi8Dw9fpnq%252BdNzQ%3D%3D"/>
       <property name="unitPrice" value="0.17"/>
+      <property name="description" value="Grove THT Vertical PCB Male connector"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="1597-1082-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/seeed-technology-co-ltd/110990030/5482560"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1130,12 +1269,17 @@
         <field name="MAXIMUM_PACKAGE_HEIGHT">8.1mm</field>
         <field name="PARTREV">A</field>
         <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="description">Grove THT Vertical PCB Male connector</field>
         <field name="manufacturer">Seeed Technology</field>
         <field name="mpn">110990030</field>
         <field name="remark">10 pcs in 1 bag</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">713-110990030</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Seeed-Studio/110990030?qs=1%252B9yuXKSi8Dw9fpnq%252BdNzQ%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">1597-1082-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/seeed-technology-co-ltd/110990030/5482560</field>
         <field name="unitPrice">0.17</field>
       </fields>
       <libsource lib="" part="Grove-4P_2" description=""/>
@@ -1150,6 +1294,11 @@
       <property name="supplier1PartNumber" value="713-110990030"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Seeed-Studio/110990030?qs=1%252B9yuXKSi8Dw9fpnq%252BdNzQ%3D%3D"/>
       <property name="unitPrice" value="0.17"/>
+      <property name="description" value="Grove THT Vertical PCB Male connector"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="1597-1082-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/seeed-technology-co-ltd/110990030/5482560"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1160,10 +1309,18 @@
       <footprint>Diode_SMD:D_SMF</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/427/sl02-2898123.pdf</datasheet>
       <fields>
+        <field name="description">Schottky-diodes &amp; gelijkrichters 1.1A .395V</field>
         <field name="manufacturer">Vishay Semiconductors</field>
+        <field name="mpn">SL03-GS08</field>
+        <field name="package">SMF (DO-219AB)</field>
+        <field name="stock">0</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">625-SL03</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Vishay-Semiconductors/SL03-GS08?qs=MEEM2Ld9hedQpyOWNZyMQA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">SL03-GS08CT-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/vishay-general-semiconductor-diodes-division/SL03-GS08/2345108?s=N4IgTCBcDaIMoBkAMBmAtAcTkgHCAugL5A</field>
+        <field name="unitPrice">0.43</field>
       </fields>
       <libsource lib="Device" part="D" description="Diode"/>
       <property name="supplier1Name" value="Mouser"/>
@@ -1171,6 +1328,14 @@
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Vishay-Semiconductors/SL03-GS08?qs=MEEM2Ld9hedQpyOWNZyMQA%3D%3D"/>
       <property name="MANUFACTURER" value=""/>
       <property name="manufacturer" value="Vishay Semiconductors"/>
+      <property name="description" value="Schottky-diodes &amp; gelijkrichters 1.1A .395V"/>
+      <property name="mpn" value="SL03-GS08"/>
+      <property name="package" value="SMF (DO-219AB)"/>
+      <property name="stock" value="0"/>
+      <property name="unitPrice" value="0.43"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="SL03-GS08CT-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/vishay-general-semiconductor-diodes-division/SL03-GS08/2345108?s=N4IgTCBcDaIMoBkAMBmAtAcTkgHCAugL5A"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1181,10 +1346,18 @@
       <footprint>Diode_SMD:D_SMF</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/427/sl02-2898123.pdf</datasheet>
       <fields>
+        <field name="description">Schottky-diodes &amp; gelijkrichters 1.1A .395V</field>
         <field name="manufacturer">Vishay Semiconductors</field>
+        <field name="mpn">SL03-GS08</field>
+        <field name="package">SMF (DO-219AB)</field>
+        <field name="stock">0</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">625-SL03</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Vishay-Semiconductors/SL03-GS08?qs=MEEM2Ld9hedQpyOWNZyMQA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">SL03-GS08CT-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/vishay-general-semiconductor-diodes-division/SL03-GS08/2345108?s=N4IgTCBcDaIMoBkAMBmAtAcTkgHCAugL5A</field>
+        <field name="unitPrice">0.43</field>
       </fields>
       <libsource lib="Device" part="D" description="Diode"/>
       <property name="MANUFACTURER" value=""/>
@@ -1192,6 +1365,14 @@
       <property name="supplier1PartNumber" value="625-SL03"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Vishay-Semiconductors/SL03-GS08?qs=MEEM2Ld9hedQpyOWNZyMQA%3D%3D"/>
       <property name="manufacturer" value="Vishay Semiconductors"/>
+      <property name="description" value="Schottky-diodes &amp; gelijkrichters 1.1A .395V"/>
+      <property name="mpn" value="SL03-GS08"/>
+      <property name="package" value="SMF (DO-219AB)"/>
+      <property name="stock" value="0"/>
+      <property name="unitPrice" value="0.43"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="SL03-GS08CT-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/vishay-general-semiconductor-diodes-division/SL03-GS08/2345108?s=N4IgTCBcDaIMoBkAMBmAtAcTkgHCAugL5A"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1202,10 +1383,18 @@
       <footprint>Diode_SMD:D_SMF</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/427/sl02-2898123.pdf</datasheet>
       <fields>
+        <field name="description">Schottky-diodes &amp; gelijkrichters 1.1A .395V</field>
         <field name="manufacturer">Vishay Semiconductors</field>
+        <field name="mpn">SL03-GS08</field>
+        <field name="package">SMF (DO-219AB)</field>
+        <field name="stock">0</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">625-SL03</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Vishay-Semiconductors/SL03-GS08?qs=MEEM2Ld9hedQpyOWNZyMQA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">SL03-GS08CT-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/vishay-general-semiconductor-diodes-division/SL03-GS08/2345108?s=N4IgTCBcDaIMoBkAMBmAtAcTkgHCAugL5A</field>
+        <field name="unitPrice">0.43</field>
       </fields>
       <libsource lib="Device" part="D" description="Diode"/>
       <property name="MANUFACTURER" value=""/>
@@ -1213,6 +1402,14 @@
       <property name="supplier1PartNumber" value="625-SL03"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Vishay-Semiconductors/SL03-GS08?qs=MEEM2Ld9hedQpyOWNZyMQA%3D%3D"/>
       <property name="manufacturer" value="Vishay Semiconductors"/>
+      <property name="description" value="Schottky-diodes &amp; gelijkrichters 1.1A .395V"/>
+      <property name="mpn" value="SL03-GS08"/>
+      <property name="package" value="SMF (DO-219AB)"/>
+      <property name="stock" value="0"/>
+      <property name="unitPrice" value="0.43"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="SL03-GS08CT-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/vishay-general-semiconductor-diodes-division/SL03-GS08/2345108?s=N4IgTCBcDaIMoBkAMBmAtAcTkgHCAugL5A"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1221,6 +1418,7 @@
     <comp ref="D4">
       <value>SP0503BAHTG</value>
       <footprint>thisProjectLibrary:SP0503BAHTG-SOT143</footprint>
+      <datasheet>https://www.mouser.be/datasheet/2/240/Littelfuse_TVS_Diode_Array_SP05_Datasheet_pdf-777043.pdf</datasheet>
       <fields>
         <field name="PACKAGE">SOT-143 Littelfuse</field>
         <field name="PARTREV">N/A</field>
@@ -1228,9 +1426,13 @@
         <field name="description">TVS DIODE 5.5VWM 8.5VC SOT143</field>
         <field name="manufacturer">Littelfuse</field>
         <field name="mpn">SP0503BAHTG</field>
+        <field name="stock">200000</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">576-SP0503BAHTG</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Littelfuse/SP0503BAHTG?qs=uD%2FdkN7XIa0NTYXwHdELYA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">F2715CT-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/littelfuse-inc/SP0503BAHTG/1154308?s=N4IgTCBcDaIMoAUAMBWJBmAQgQQBIBUBxEAXQF8g</field>
         <field name="unitPrice">0.88</field>
       </fields>
       <libsource lib="thisProjectLibrary" part="SP0503BAHTG" description=""/>
@@ -1249,6 +1451,10 @@
       <property name="manufacturer" value="Littelfuse"/>
       <property name="unitPrice" value="0.88"/>
       <property name="mpn" value="SP0503BAHTG"/>
+      <property name="stock" value="200000"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="F2715CT-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/littelfuse-inc/SP0503BAHTG/1154308?s=N4IgTCBcDaIMoAUAMBWJBmAQgQQBIBUBxEAXQF8g"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1260,11 +1466,15 @@
       <datasheet>notApplicable</datasheet>
       <fields>
         <field name="mpn">notApplicable</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1276,11 +1486,15 @@
       <datasheet>notApplicable</datasheet>
       <fields>
         <field name="mpn">notApplicable</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1292,11 +1506,15 @@
       <datasheet>notApplicable</datasheet>
       <fields>
         <field name="mpn">notApplicable</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1308,11 +1526,15 @@
       <datasheet>notApplicable</datasheet>
       <fields>
         <field name="mpn">notApplicable</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1324,11 +1546,15 @@
       <datasheet>notApplicable</datasheet>
       <fields>
         <field name="mpn">notApplicable</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1340,11 +1566,15 @@
       <datasheet>notApplicable</datasheet>
       <fields>
         <field name="mpn">notApplicable</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1356,11 +1586,15 @@
       <datasheet>notApplicable</datasheet>
       <fields>
         <field name="mpn">notApplicable</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1371,10 +1605,14 @@
       <footprint>thisProjectLibrary:L_TDK_VLS6045EX</footprint>
       <datasheet>https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_power_vls6045ex_en.pdf?ref_disty=mouser</datasheet>
       <fields>
+        <field name="description">Power Inductors - SMD 68uH</field>
         <field name="manufacturer">TDK</field>
+        <field name="mpn">VLS6045EX-680M</field>
+        <field name="stock">29000</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">810-VLS6045EX-680M</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/TDK/VLS6045EX-680M?qs=oF%2FSscNnLpBLjomrKRgHaA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.48</field>
       </fields>
       <libsource lib="Device" part="L" description="Inductor"/>
@@ -1385,6 +1623,10 @@
       <property name="PRICE" value=""/>
       <property name="manufacturer" value="TDK"/>
       <property name="unitPrice" value="0.48"/>
+      <property name="description" value="Power Inductors - SMD 68uH"/>
+      <property name="mpn" value="VLS6045EX-680M"/>
+      <property name="stock" value="29000"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1395,11 +1637,18 @@
       <footprint>Package_TO_SOT_SMD:SOT-323_SC-70</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/427/si1308edl-1764588.pdf</datasheet>
       <fields>
+        <field name="description">MOSFET 30V Vds 12V Vgs SC70-3</field>
         <field name="manufacturer">Vishay Semiconductors</field>
+        <field name="mpn">SI1308EDL-T1-GE3</field>
         <field name="remark">unavailable</field>
+        <field name="stock">0</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">78-SI1308EDL-T1-GE3</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Vishay-Semiconductors/SI1308EDL-T1-GE3?qs=bX1%252BNvsK%2FBramh9tgpOaEw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">SI1308EDL-T1-GE3CT-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/vishay-siliconix/SI1308EDL-T1-GE3/4876435?s=N4IgTCBcDaIMoEkCMBmADADgKIBEAyAtACpIEDiWKIAugL5A</field>
+        <field name="unitPrice">0.48</field>
       </fields>
       <libsource lib="Device" part="Q_NMOS_GSD" description="N-MOSFET transistor, gate/source/drain"/>
       <property name="MANUFACTURER" value=""/>
@@ -1408,6 +1657,13 @@
       <property name="supplier1PartNumber" value="78-SI1308EDL-T1-GE3"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Vishay-Semiconductors/SI1308EDL-T1-GE3?qs=bX1%252BNvsK%2FBramh9tgpOaEw%3D%3D"/>
       <property name="manufacturer" value="Vishay Semiconductors"/>
+      <property name="mpn" value="SI1308EDL-T1-GE3"/>
+      <property name="stock" value="0"/>
+      <property name="unitPrice" value="0.48"/>
+      <property name="description" value="MOSFET 30V Vds 12V Vgs SC70-3"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="SI1308EDL-T1-GE3CT-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/vishay-siliconix/SI1308EDL-T1-GE3/4876435?s=N4IgTCBcDaIMoEkCMBmADADgKIBEAyAtACpIEDiWKIAugL5A"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1415,7 +1671,7 @@
     </comp>
     <comp ref="R1">
       <value>3K3</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 3.3KOHMS 5% 1/10WATT</field>
@@ -1423,9 +1679,11 @@
         <field name="mpn">CR0603-JW-332ELF</field>
         <field name="package">0603-1608</field>
         <field name="remark">this controls the charging current</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603JW-332EL</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-332ELF?qs=sGAEpiMZZMtlubZbdhIBILRoc98ORTtj%252BT9ogLK5ueQ%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.015</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1438,6 +1696,8 @@
       <property name="supplier1PartNumber" value="652-CR0603JW-332EL"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-332ELF?qs=sGAEpiMZZMtlubZbdhIBILRoc98ORTtj%252BT9ogLK5ueQ%3D"/>
       <property name="unitPrice" value="0.015"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1445,16 +1705,18 @@
     </comp>
     <comp ref="R2">
       <value>1K</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 1KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-JW-102ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603-JW-102ELF</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-102ELF?qs=rcPhh2wube3o3zlmFZCUPg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.011</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1466,6 +1728,8 @@
       <property name="supplier1PartNumber" value="652-CR0603-JW-102ELF"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-102ELF?qs=rcPhh2wube3o3zlmFZCUPg%3D%3D"/>
       <property name="unitPrice" value="0.011"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1473,16 +1737,18 @@
     </comp>
     <comp ref="R3">
       <value>5K1</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 5.1KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-FX-5101ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603FX-5101ELF</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-5101ELF?qs=sGAEpiMZZMtlubZbdhIBIMinHFTiNSf6ytasqlOqOko%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.015</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1494,6 +1760,8 @@
       <property name="supplier1PartNumber" value="652-CR0603FX-5101ELF"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-5101ELF?qs=sGAEpiMZZMtlubZbdhIBIMinHFTiNSf6ytasqlOqOko%3D"/>
       <property name="unitPrice" value="0.015"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1501,16 +1769,18 @@
     </comp>
     <comp ref="R4">
       <value>22K1</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 22.1KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-FX-2212ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603FX-2212ELF</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-2212ELF?qs=zx2075yZkZJFzojWSdyX6Q%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.017</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1522,6 +1792,8 @@
       <property name="supplier1PartNumber" value="652-CR0603FX-2212ELF"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-2212ELF?qs=zx2075yZkZJFzojWSdyX6Q%3D%3D"/>
       <property name="unitPrice" value="0.017"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1529,16 +1801,18 @@
     </comp>
     <comp ref="R5">
       <value>5K1</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 5.1KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-FX-5101ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603FX-5101ELF</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-5101ELF?qs=sGAEpiMZZMtlubZbdhIBIMinHFTiNSf6ytasqlOqOko%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.015</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1550,6 +1824,8 @@
       <property name="supplier1PartNumber" value="652-CR0603FX-5101ELF"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-5101ELF?qs=sGAEpiMZZMtlubZbdhIBIMinHFTiNSf6ytasqlOqOko%3D"/>
       <property name="unitPrice" value="0.015"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1557,16 +1833,18 @@
     </comp>
     <comp ref="R6">
       <value>470</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 470OHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-FX-4700ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603FX-4700ELF</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-4700ELF?qs=CCIlxZRRv7gUHJx8Zn6ZzQ%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.016</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1578,6 +1856,8 @@
       <property name="supplier1PartNumber" value="652-CR0603FX-4700ELF"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-4700ELF?qs=CCIlxZRRv7gUHJx8Zn6ZzQ%3D%3D"/>
       <property name="unitPrice" value="0.016"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1585,16 +1865,18 @@
     </comp>
     <comp ref="R7">
       <value>47K5</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 47.5KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-FX-4752ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603FX-4752ELF</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-4752ELF?qs=CCIlxZRRv7hsbWXGq3hzLw%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.029</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1606,6 +1888,8 @@
       <property name="supplier1PartNumber" value="652-CR0603FX-4752ELF"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-FX-4752ELF?qs=CCIlxZRRv7hsbWXGq3hzLw%3D%3D"/>
       <property name="unitPrice" value="0.029"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1613,16 +1897,31 @@
     </comp>
     <comp ref="R8">
       <value>0R47</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
+      <datasheet>https://www.mouser.be/datasheet/2/315/AOA0000C313-1141758.pdf</datasheet>
       <fields>
+        <field name="description">Current Sense Resistors - SMD 0603 0.47ohm 1% Curr Sense AEC-Q200</field>
+        <field name="manufacturer">Panasonic</field>
+        <field name="mpn">ERJ-3RQFR47V</field>
         <field name="package">0603-1608</field>
+        <field name="stock">160000</field>
         <field name="supplier1Name">Mouser</field>
+        <field name="supplier1PartNumber">667-ERJ-3RQFR47V</field>
+        <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Panasonic/ERJ-3RQFR47V?qs=4WZYzuGhm5rszJHZ1WW1RA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="unitPrice">0.17</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="supplier1Name" value="Mouser"/>
-      <property name="description" value=""/>
-      <property name="manufacturer" value=""/>
+      <property name="description" value="Current Sense Resistors - SMD 0603 0.47ohm 1% Curr Sense AEC-Q200"/>
+      <property name="manufacturer" value="Panasonic"/>
       <property name="package" value="0603-1608"/>
+      <property name="stock" value="160000"/>
+      <property name="mpn" value="ERJ-3RQFR47V"/>
+      <property name="supplier1PartNumber" value="667-ERJ-3RQFR47V"/>
+      <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Panasonic/ERJ-3RQFR47V?qs=4WZYzuGhm5rszJHZ1WW1RA%3D%3D"/>
+      <property name="unitPrice" value="0.17"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1630,16 +1929,18 @@
     </comp>
     <comp ref="R9">
       <value>10K</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 10KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-JW-103ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603-JW-103ELF</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-103ELF?qs=tprK%2FdUq6q6vORSl%252Bpo4rg%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.012</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1651,6 +1952,8 @@
       <property name="supplier1PartNumber" value="652-CR0603-JW-103ELF"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-103ELF?qs=tprK%2FdUq6q6vORSl%252Bpo4rg%3D%3D"/>
       <property name="unitPrice" value="0.012"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1658,16 +1961,18 @@
     </comp>
     <comp ref="R10">
       <value>3K3</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 3.3KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-JW-332ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603JW-332EL</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-332ELF?qs=sGAEpiMZZMtlubZbdhIBILRoc98ORTtj%252BT9ogLK5ueQ%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.015</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1679,6 +1984,8 @@
       <property name="supplier1PartNumber" value="652-CR0603JW-332EL"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-332ELF?qs=sGAEpiMZZMtlubZbdhIBILRoc98ORTtj%252BT9ogLK5ueQ%3D"/>
       <property name="unitPrice" value="0.015"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1686,16 +1993,18 @@
     </comp>
     <comp ref="R11">
       <value>3K3</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 3.3KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-JW-332ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603JW-332EL</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-332ELF?qs=sGAEpiMZZMtlubZbdhIBILRoc98ORTtj%252BT9ogLK5ueQ%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.015</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1707,6 +2016,8 @@
       <property name="supplier1PartNumber" value="652-CR0603JW-332EL"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-332ELF?qs=sGAEpiMZZMtlubZbdhIBILRoc98ORTtj%252BT9ogLK5ueQ%3D"/>
       <property name="unitPrice" value="0.015"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1714,16 +2025,18 @@
     </comp>
     <comp ref="R12">
       <value>3K3</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>thisProjectLibrary:0603_1608Metric</footprint>
       <datasheet>https://www.mouser.be/datasheet/2/54/cr-1858361.pdf</datasheet>
       <fields>
         <field name="description">Thick Film Resistors - SMD 0603 3.3KOHMS 5% 1/10WATT</field>
         <field name="manufacturer">Bourns</field>
         <field name="mpn">CR0603-JW-332ELF</field>
         <field name="package">0603-1608</field>
+        <field name="stock">notApplicable</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">652-CR0603JW-332EL</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-332ELF?qs=sGAEpiMZZMtlubZbdhIBILRoc98ORTtj%252BT9ogLK5ueQ%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.015</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -1735,6 +2048,8 @@
       <property name="supplier1PartNumber" value="652-CR0603JW-332EL"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Bourns/CR0603-JW-332ELF?qs=sGAEpiMZZMtlubZbdhIBILRoc98ORTtj%252BT9ogLK5ueQ%3D"/>
       <property name="unitPrice" value="0.015"/>
+      <property name="stock" value="notApplicable"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1747,9 +2062,12 @@
       <fields>
         <field name="description">PTS815</field>
         <field name="manufacturer">C&amp;K</field>
+        <field name="mpn">PTS815 SJM 250 SMTR LFS</field>
+        <field name="stock">38000</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">611-PTS815SJM250SMTR</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/CK/PTS815-SJM-250-SMTR-LFS?qs=ahcBuItHZ3xKWmfV%2F2E6bA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.18</field>
       </fields>
       <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
@@ -1762,6 +2080,9 @@
       <property name="description" value="PTS815"/>
       <property name="manufacturer" value="C&amp;K"/>
       <property name="unitPrice" value="0.18"/>
+      <property name="mpn" value="PTS815 SJM 250 SMTR LFS"/>
+      <property name="stock" value="38000"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1774,9 +2095,12 @@
       <fields>
         <field name="description">PTS815</field>
         <field name="manufacturer">C&amp;K</field>
+        <field name="mpn">PTS815 SJM 250 SMTR LFS</field>
+        <field name="stock">38000</field>
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">611-PTS815SJM250SMTR</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/CK/PTS815-SJM-250-SMTR-LFS?qs=ahcBuItHZ3xKWmfV%2F2E6bA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
         <field name="unitPrice">0.18</field>
       </fields>
       <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
@@ -1789,6 +2113,9 @@
       <property name="supplier1Name" value="Mouser"/>
       <property name="supplier1PartNumber" value="611-PTS815SJM250SMTR"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/CK/PTS815-SJM-250-SMTR-LFS?qs=ahcBuItHZ3xKWmfV%2F2E6bA%3D%3D"/>
+      <property name="mpn" value="PTS815 SJM 250 SMTR LFS"/>
+      <property name="stock" value="38000"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1801,10 +2128,12 @@
       <fields>
         <field name="mpn">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1817,10 +2146,12 @@
       <fields>
         <field name="mpn">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1833,10 +2164,12 @@
       <fields>
         <field name="mpn">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1849,10 +2182,12 @@
       <fields>
         <field name="mpn">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1865,10 +2200,12 @@
       <fields>
         <field name="mpn">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1881,10 +2218,12 @@
       <fields>
         <field name="mpn">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1897,10 +2236,12 @@
       <fields>
         <field name="mpn">notApplicable</field>
         <field name="supplier1Name">notApplicable</field>
+        <field name="supplier2Name">notApplicable</field>
       </fields>
       <libsource lib="Connector" part="TestPoint_Probe" description="test point (alternative probe-style design)"/>
       <property name="supplier1Name" value="notApplicable"/>
       <property name="mpn" value="notApplicable"/>
+      <property name="supplier2Name" value="notApplicable"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1919,6 +2260,9 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">579-MCP73123-22SI/MF</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Microchip-Technology-Atmel/MCP73123-22SI-MF?qs=E6wAi2XWqcMa9YfU6aI5BA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">MCP73123-22SI/MF-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/microchip-technology/MCP73123-22SI-MF/2125535?s=N4IgTCBcDaILIGEAKB2AzARjGgtGMAygJID0cAYiALoC%2BQA</field>
         <field name="unitPrice">1.52</field>
       </fields>
       <libsource lib="thisProjectLibrary" part="MCP73123T-22SI{slash}MF" description=""/>
@@ -1931,6 +2275,9 @@
       <property name="supplier1Name" value="Mouser"/>
       <property name="supplier1PartNumber" value="579-MCP73123-22SI/MF"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Microchip-Technology-Atmel/MCP73123-22SI-MF?qs=E6wAi2XWqcMa9YfU6aI5BA%3D%3D"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="MCP73123-22SI/MF-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/microchip-technology/MCP73123-22SI-MF/2125535?s=N4IgTCBcDaILIGEAKB2AzARjGgtGMAygJID0cAYiALoC%2BQA"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1948,6 +2295,9 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">713-317990687</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Seeed-Studio/317990687?qs=sGAEpiMZZMu3sxpa5v1qrrZmfQRM%252BjWTxTuehZRWDe8%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">1597-317990687-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/seeed-technology-co-ltd/317990687/13572083?s=N4IgTCBcDaIMwEYDsBOFAGAbADiSAugL5A</field>
         <field name="unitPrice">9.9</field>
       </fields>
       <libsource lib="thisProjectLibrary" part="LoRa-E5" description=""/>
@@ -1965,6 +2315,9 @@
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Seeed-Studio/317990687?qs=sGAEpiMZZMu3sxpa5v1qrrZmfQRM%252BjWTxTuehZRWDe8%3D"/>
       <property name="unitPrice" value="9.9"/>
       <property name="description" value="Sub-GHz Modules LoRa-E5 Wireless Module"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="1597-317990687-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/seeed-technology-co-ltd/317990687/13572083?s=N4IgTCBcDaIMwEYDsBOFAGAbADiSAugL5A"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1983,6 +2336,9 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">634-CP2102NA02GQFN24</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Silicon-Labs/CP2102N-A02-GQFN24?qs=u16ybLDytRYKabtL%2FE7DZA%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">336-5887-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/silicon-labs/CP2102N-A02-GQFN24/9863476</field>
         <field name="unitPrice">2.16</field>
       </fields>
       <libsource lib="Interface_USB" part="CP2102N-Axx-xQFN24" description="USB to UART master bridge, QFN-24"/>
@@ -1997,6 +2353,9 @@
       <property name="supplier1PartNumber" value="634-CP2102NA02GQFN24"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/Silicon-Labs/CP2102N-A02-GQFN24?qs=u16ybLDytRYKabtL%2FE7DZA%3D%3D"/>
       <property name="unitPrice" value="2.16"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="336-5887-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/silicon-labs/CP2102N-A02-GQFN24/9863476"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2007,14 +2366,26 @@
       <footprint>Symbol:OSHW-Symbol_6.7x6mm_SilkScreen</footprint>
       <datasheet>https://www.waveshare.com/wiki/1.54inch_e-Paper_Module_Manual</datasheet>
       <fields>
+        <field name="description">ePaper Display</field>
+        <field name="manufacturer">GoodDisplay</field>
+        <field name="mpn">GDEH0154D67</field>
+        <field name="stock">??</field>
         <field name="supplier1Name">GoodDisplay</field>
         <field name="supplier1PartNumber">GDEH0154D67</field>
         <field name="supplier1PartURL">https://www.e-paper-display.com/products_detail/productId=455.html</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="unitPrice">??</field>
       </fields>
       <libsource lib="thisProjectLibrary" part="eInk_Display_1.54{dblquote}200x200px" description=""/>
       <property name="supplier1Name" value="GoodDisplay"/>
       <property name="supplier1PartNumber" value="GDEH0154D67"/>
       <property name="supplier1PartURL" value="https://www.e-paper-display.com/products_detail/productId=455.html"/>
+      <property name="description" value="ePaper Display"/>
+      <property name="manufacturer" value="GoodDisplay"/>
+      <property name="mpn" value="GDEH0154D67"/>
+      <property name="stock" value="??"/>
+      <property name="unitPrice" value="??"/>
+      <property name="supplier2Name" value="Digi-Key"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2032,6 +2403,9 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">262-BME680</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/Bosch-Sensortec/BME680?qs=v271MhAjFHjo0yA%2FC4OnDQ%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">828-1077-1-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/bosch-sensortec/BME680/7401317</field>
         <field name="unitPrice">13.31</field>
       </fields>
       <libsource lib="Sensor" part="BME680" description="4-in-1 sensor, gas, humidity, pressure, temperature, I2C and SPI interface, 1.71-3.6V, LGA-8"/>
@@ -2046,6 +2420,9 @@
       <property name="unitPrice" value="13.31"/>
       <property name="DESCRIPTION" value=""/>
       <property name="description" value="Air Quality Sensors MEMS gas, humidity, pressure and temperature sensor"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="828-1077-1-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/bosch-sensortec/BME680/7401317"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2066,6 +2443,9 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">985-TSL25911FN</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/ams-OSRAM/TSL25911FN?qs=6irNfxKJ9AaiNMbaQmyIug%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">TSL25911FNCT-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/ams-osram/TSL25911FN/4162547</field>
         <field name="unitPrice">2.86</field>
       </fields>
       <libsource lib="TSL2561" part="TSL2591" description=""/>
@@ -2085,6 +2465,9 @@
       <property name="supplier1PartNumber" value="985-TSL25911FN"/>
       <property name="supplier1PartURL" value="https://www.mouser.be/ProductDetail/ams-OSRAM/TSL25911FN?qs=6irNfxKJ9AaiNMbaQmyIug%3D%3D"/>
       <property name="unitPrice" value="2.86"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="TSL25911FNCT-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/ams-osram/TSL25911FN/4162547"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2103,6 +2486,9 @@
         <field name="supplier1Name">Mouser</field>
         <field name="supplier1PartNumber">755-BR24G512FVT-5AE2</field>
         <field name="supplier1PartURL">https://www.mouser.be/ProductDetail/ROHM-Semiconductor/BR24G512FVT-5AE2?qs=MyNHzdoqoQKczk86bx4V7w%3D%3D</field>
+        <field name="supplier2Name">Digi-Key</field>
+        <field name="supplier2PartNumber">846-BR24G512FVT-5AE2CT-ND</field>
+        <field name="supplier2PartURL">https://www.digikey.be/nl/products/detail/rohm-semiconductor/BR24G512FVT-5AE2/16284211?s=N4IgTCBcDaIEICUwBYDiBWAjGAYgNQBUBadAQQFEIBdAXyA</field>
         <field name="unitPrice">1.05</field>
       </fields>
       <libsource lib="thisProjectLibrary" part="BR24G512FVT" description=""/>
@@ -2119,6 +2505,9 @@
       <property name="package" value="TSSOP-B8"/>
       <property name="stock" value="6187"/>
       <property name="unitPrice" value="1.05"/>
+      <property name="supplier2Name" value="Digi-Key"/>
+      <property name="supplier2PartNumber" value="846-BR24G512FVT-5AE2CT-ND"/>
+      <property name="supplier2PartURL" value="https://www.digikey.be/nl/products/detail/rohm-semiconductor/BR24G512FVT-5AE2/16284211?s=N4IgTCBcDaIEICUwBYDiBWAjGAYgNQBUBadAQQFEIBdAXyA"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="File: MuMo-v2-Node.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2232,37 +2621,6 @@
       </fields>
       <pins>
         <pin num="1" name="1" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="Connector" part="USB_C_Receptacle_USB2.0">
-      <description>USB 2.0-only Type-C Receptacle connector</description>
-      <docs>https://www.usb.org/sites/default/files/documents/usb_type-c.zip</docs>
-      <footprints>
-        <fp>USB*C*Receptacle*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">USB_C_Receptacle_USB2.0</field>
-        <field name="Datasheet">https://www.usb.org/sites/default/files/documents/usb_type-c.zip</field>
-      </fields>
-      <pins>
-        <pin num="A1" name="GND" type="passive"/>
-        <pin num="A4" name="VBUS" type="passive"/>
-        <pin num="A5" name="CC1" type="bidirectional"/>
-        <pin num="A6" name="D+" type="bidirectional"/>
-        <pin num="A7" name="D-" type="bidirectional"/>
-        <pin num="A8" name="SBU1" type="bidirectional"/>
-        <pin num="A9" name="VBUS" type="passive"/>
-        <pin num="A12" name="GND" type="passive"/>
-        <pin num="B1" name="GND" type="passive"/>
-        <pin num="B4" name="VBUS" type="passive"/>
-        <pin num="B5" name="CC2" type="bidirectional"/>
-        <pin num="B6" name="D+" type="bidirectional"/>
-        <pin num="B7" name="D-" type="bidirectional"/>
-        <pin num="B8" name="SBU2" type="bidirectional"/>
-        <pin num="B9" name="VBUS" type="passive"/>
-        <pin num="B12" name="GND" type="passive"/>
-        <pin num="S1" name="SHIELD" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Connector_Generic" part="Conn_01x24">
@@ -2621,6 +2979,35 @@
         <pin num="11" name="EXP" type="power_in"/>
       </pins>
     </libpart>
+    <libpart lib="thisProjectLibrary" part="Molex-2171790001">
+      <description>USB-C Receptable</description>
+      <docs>https://www.mouser.be/datasheet/2/837/USB4105-2888174.pdf</docs>
+      <fields>
+        <field name="Reference">CONN</field>
+        <field name="Value">Molex-2171790001</field>
+        <field name="Footprint">thisProjectLibrary:Molex-2171790001</field>
+        <field name="Datasheet">https://www.mouser.be/datasheet/2/837/USB4105-2888174.pdf</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">3.31 mm</field>
+        <field name="MANUFACTURER">Molex</field>
+        <field name="PARTREV">A3</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+      </fields>
+      <pins>
+        <pin num="A1-B12" name="GND" type="power_in"/>
+        <pin num="A4-B9" name="VBUS" type="power_in"/>
+        <pin num="A5" name="CC1" type="bidirectional"/>
+        <pin num="A6" name="D+" type="bidirectional"/>
+        <pin num="A7" name="D-" type="bidirectional"/>
+        <pin num="A8" name="SBU1" type="bidirectional"/>
+        <pin num="B1-A12" name="GND" type="power_in"/>
+        <pin num="B4-A9" name="VBUS" type="power_in"/>
+        <pin num="B5" name="CC2" type="bidirectional"/>
+        <pin num="B6" name="D+" type="bidirectional"/>
+        <pin num="B7" name="D-" type="bidirectional"/>
+        <pin num="B8" name="SBU2" type="bidirectional"/>
+        <pin num="S1" name="Shield" type="power_in"/>
+      </pins>
+    </libpart>
     <libpart lib="thisProjectLibrary" part="SP0503BAHTG">
       <fields>
         <field name="Reference">D</field>
@@ -2715,10 +3102,8 @@
       <node ref="C1" pin="1" pintype="passive"/>
       <node ref="C3" pin="1" pintype="passive"/>
       <node ref="C4" pin="1" pintype="passive"/>
-      <node ref="CONN4" pin="A4" pinfunction="VBUS" pintype="passive"/>
-      <node ref="CONN4" pin="A9" pinfunction="VBUS" pintype="passive"/>
-      <node ref="CONN4" pin="B4" pinfunction="VBUS" pintype="passive"/>
-      <node ref="CONN4" pin="B9" pinfunction="VBUS" pintype="passive"/>
+      <node ref="CONN4" pin="A4-B9" pinfunction="VBUS" pintype="power_in"/>
+      <node ref="CONN4" pin="B4-A9" pinfunction="VBUS" pintype="power_in"/>
       <node ref="D4" pin="2" pintype="passive"/>
       <node ref="R4" pin="1" pintype="passive"/>
       <node ref="TP7" pin="1" pinfunction="1" pintype="passive"/>
@@ -2737,11 +3122,23 @@
       <node ref="CONN3" pin="9" pinfunction="Pin_9" pintype="passive"/>
       <node ref="U2" pin="13" pinfunction="PC0" pintype="input"/>
     </net>
-    <net code="5" name="D{slash}C">
+    <net code="5" name="D+">
+      <node ref="CONN4" pin="A6" pinfunction="D+" pintype="bidirectional"/>
+      <node ref="CONN4" pin="B6" pinfunction="D+" pintype="bidirectional"/>
+      <node ref="D4" pin="3" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="D+" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="D-">
+      <node ref="CONN4" pin="A7" pinfunction="D-" pintype="bidirectional"/>
+      <node ref="CONN4" pin="B7" pinfunction="D-" pintype="bidirectional"/>
+      <node ref="D4" pin="4" pintype="passive"/>
+      <node ref="U3" pin="4" pinfunction="D-" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="D{slash}C">
       <node ref="CONN3" pin="11" pinfunction="Pin_11" pintype="passive"/>
       <node ref="U2" pin="12" pinfunction="PC1" pintype="input"/>
     </net>
-    <net code="6" name="GND">
+    <net code="8" name="GND">
       <node ref="C1" pin="2" pintype="passive"/>
       <node ref="C10" pin="1" pintype="passive"/>
       <node ref="C11" pin="1" pintype="passive"/>
@@ -2773,11 +3170,9 @@
       <node ref="CONN3" pin="0" pinfunction="GND" pintype="power_in"/>
       <node ref="CONN3" pin="17" pinfunction="Pin_17" pintype="passive"/>
       <node ref="CONN3" pin="8" pinfunction="Pin_8" pintype="passive"/>
-      <node ref="CONN4" pin="A1" pinfunction="GND" pintype="passive"/>
-      <node ref="CONN4" pin="A12" pinfunction="GND" pintype="passive"/>
-      <node ref="CONN4" pin="B1" pinfunction="GND" pintype="passive"/>
-      <node ref="CONN4" pin="B12" pinfunction="GND" pintype="passive"/>
-      <node ref="CONN4" pin="S1" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="CONN4" pin="A1-B12" pinfunction="GND" pintype="power_in"/>
+      <node ref="CONN4" pin="B1-A12" pinfunction="GND" pintype="power_in"/>
+      <node ref="CONN4" pin="S1" pinfunction="Shield" pintype="power_in"/>
       <node ref="CONN5" pin="2" pinfunction="Ext" pintype="passive"/>
       <node ref="CONN6" pin="4" pinfunction="4" pintype="power_in"/>
       <node ref="CONN7" pin="4" pinfunction="4" pintype="power_in"/>
@@ -2789,8 +3184,8 @@
       <node ref="H3" pin="1" pinfunction="1" pintype="input"/>
       <node ref="H4" pin="1" pinfunction="1" pintype="input"/>
       <node ref="R1" pin="2" pintype="passive"/>
-      <node ref="R3" pin="2" pintype="passive"/>
-      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
       <node ref="R7" pin="2" pintype="passive"/>
       <node ref="R8" pin="2" pintype="passive"/>
       <node ref="R9" pin="1" pintype="passive"/>
@@ -2815,76 +3210,64 @@
       <node ref="U7" pin="3" pinfunction="A3" pintype="input"/>
       <node ref="U7" pin="4" pinfunction="GND" pintype="power_in"/>
     </net>
-    <net code="7" name="Net-(C7-Pad1)">
+    <net code="9" name="Net-(C7-Pad1)">
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
     </net>
-    <net code="8" name="Net-(C7-Pad2)">
+    <net code="10" name="Net-(C7-Pad2)">
       <node ref="C7" pin="2" pintype="passive"/>
       <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="L1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="Q1" pin="3" pinfunction="D" pintype="passive"/>
     </net>
-    <net code="9" name="Net-(C8-Pad2)">
+    <net code="11" name="Net-(C8-Pad2)">
       <node ref="C8" pin="2" pintype="passive"/>
       <node ref="CONN3" pin="5" pinfunction="Pin_5" pintype="passive"/>
     </net>
-    <net code="10" name="Net-(C9-Pad2)">
+    <net code="12" name="Net-(C9-Pad2)">
       <node ref="C9" pin="2" pintype="passive"/>
       <node ref="CONN3" pin="18" pinfunction="Pin_18" pintype="passive"/>
     </net>
-    <net code="11" name="Net-(C10-Pad2)">
+    <net code="13" name="Net-(C10-Pad2)">
       <node ref="C10" pin="2" pintype="passive"/>
       <node ref="CONN3" pin="20" pinfunction="Pin_20" pintype="passive"/>
     </net>
-    <net code="12" name="Net-(C11-Pad2)">
+    <net code="14" name="Net-(C11-Pad2)">
       <node ref="C11" pin="2" pintype="passive"/>
       <node ref="CONN3" pin="22" pinfunction="Pin_22" pintype="passive"/>
     </net>
-    <net code="13" name="Net-(C13-Pad2)">
+    <net code="15" name="Net-(C13-Pad2)">
       <node ref="C13" pin="2" pintype="passive"/>
       <node ref="CONN3" pin="21" pinfunction="Pin_21" pintype="passive"/>
       <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
     </net>
-    <net code="14" name="Net-(C14-Pad2)">
+    <net code="16" name="Net-(C14-Pad2)">
       <node ref="C14" pin="2" pintype="passive"/>
       <node ref="CONN3" pin="23" pinfunction="Pin_23" pintype="passive"/>
       <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
     </net>
-    <net code="15" name="Net-(C15-Pad2)">
+    <net code="17" name="Net-(C15-Pad2)">
       <node ref="C15" pin="2" pintype="passive"/>
       <node ref="CONN3" pin="24" pinfunction="Pin_24" pintype="passive"/>
     </net>
-    <net code="16" name="Net-(CONN3-Pad2)">
+    <net code="18" name="Net-(CONN3-Pad2)">
       <node ref="CONN3" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R9" pin="2" pintype="passive"/>
     </net>
-    <net code="17" name="Net-(CONN3-Pad3)">
+    <net code="19" name="Net-(CONN3-Pad3)">
       <node ref="CONN3" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="Q1" pin="2" pinfunction="S" pintype="passive"/>
       <node ref="R8" pin="1" pintype="passive"/>
     </net>
-    <net code="18" name="Net-(CONN4-PadA5)">
+    <net code="20" name="Net-(CONN4-PadA5)">
       <node ref="CONN4" pin="A5" pinfunction="CC1" pintype="bidirectional"/>
-      <node ref="R3" pin="1" pintype="passive"/>
-    </net>
-    <net code="19" name="Net-(CONN4-PadA6)">
-      <node ref="CONN4" pin="A6" pinfunction="D+" pintype="bidirectional"/>
-      <node ref="CONN4" pin="B6" pinfunction="D+" pintype="bidirectional"/>
-      <node ref="D4" pin="3" pintype="passive"/>
-      <node ref="U3" pin="3" pinfunction="D+" pintype="bidirectional"/>
-    </net>
-    <net code="20" name="Net-(CONN4-PadA7)">
-      <node ref="CONN4" pin="A7" pinfunction="D-" pintype="bidirectional"/>
-      <node ref="CONN4" pin="B7" pinfunction="D-" pintype="bidirectional"/>
-      <node ref="D4" pin="4" pintype="passive"/>
-      <node ref="U3" pin="4" pinfunction="D-" pintype="bidirectional"/>
+      <node ref="R5" pin="2" pintype="passive"/>
     </net>
     <net code="21" name="Net-(CONN4-PadB5)">
       <node ref="CONN4" pin="B5" pinfunction="CC2" pintype="bidirectional"/>
-      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
     </net>
     <net code="22" name="Net-(CONN5-Pad1)">
       <node ref="CONN5" pin="1" pinfunction="In" pintype="passive"/>

@@ -1,12 +1,12 @@
 %TF.GenerationSoftware,KiCad,Pcbnew,(6.0.8)*%
-%TF.CreationDate,2023-02-07T11:28:49+01:00*%
+%TF.CreationDate,2023-02-20T11:38:59+01:00*%
 %TF.ProjectId,MuMo-v2-Node,4d754d6f-2d76-4322-9d4e-6f64652e6b69,rev?*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Soldermask,Bot*%
 %TF.FilePolarity,Negative*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW (6.0.8)) date 2023-02-07 11:28:49*
+G04 Created by KiCad (PCBNEW (6.0.8)) date 2023-02-20 11:38:59*
 %MOMM*%
 %LPD*%
 G01*
@@ -53,7 +53,7 @@ X163280800Y-74628000D03*
 X163280800Y-77168000D03*
 %TD*%
 D12*
-%TO.C,TP6*%
+%TO.C,TP2*%
 X144530800Y-95308000D03*
 %TD*%
 D13*
@@ -86,7 +86,7 @@ D19*
 X144960000Y-78484000D03*
 %TD*%
 D12*
-%TO.C,TP4*%
+%TO.C,TP1*%
 X144530800Y-98058000D03*
 %TD*%
 D14*
@@ -108,7 +108,7 @@ X146030800Y-60558000D03*
 X192030800Y-60558000D03*
 %TD*%
 D12*
-%TO.C,TP7*%
+%TO.C,TP3*%
 X144530800Y-89308000D03*
 %TD*%
 D20*

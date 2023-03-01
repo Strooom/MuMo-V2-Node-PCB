@@ -4,7 +4,7 @@
 	- BME680 and TSL25911 sensors are built in, other can be added through I2C or UART
 * runs on a single cell LiFePO4 battery. Battery-charger from USB-C port included
 * Wio-E5 LoRa module from www.seeedstudio.com. This contains an STM32WLE processor combined with Semtech SX126X radio. The firmware runs directly on the STM32. More info on this Wio-E5 :  https://www.seeedstudio.com/LoRa-E5-Wireless-Module-p-4745.html
-* 64 KByte of onboard EEPROM allows to buffer sensor-readings when network is unavailable.
+* 128 KByte of onboard EEPROM allows to buffer sensor-readings when network is unavailable.
 * ePaper display allows to identify the device, and read status from the display, while still being ultra low power.
 
 

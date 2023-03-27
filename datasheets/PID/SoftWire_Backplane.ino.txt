@@ -1,0 +1,889 @@
+// *****************************************************
+//
+// V1.0,          Original version of SoftI2C code ... works OK but basic
+// V2.0, 08/02/17 Cleaned up the code from V.1.0 - it works but was messy
+// V2.1, 17/02/17 Takes Input from Serial Console for live re-configuration
+//                Also counts uSecs between measures rather than ms accumulateddevice manager
+// V3.0, 21/02/17 Added the RTC module, RTC & ASIC Temperature Monitoring.
+// V4.0  01/05/19 DD Take over code base and rewrite
+//
+String Revision_Info = "Backplane V4.0 With Serial I/P & Temp";
+
+// ******************************************************
+// This program uses the Soft I2C library because The standard Wire library does
+// not work with  the I2C protocol. Soft wire I2C library is available from:
+// https://github.com/felias-fogg/SoftI2CMaster
+// NB setClock() prototype needs to be commented out in line 56 of file SoftWire.h
+// to remove compiler warning.
+// 
+// Pinout of Breakout Board header (PYB-266)
+// ================================================
+//                               /----+
+// Vdd 3.3V MAX, NOT 5V       1 | o o | 2  Unassigned
+// SCL (12C)Digital I/O       3 | o o | 4  SDA (12C)Digital I/O
+// CS needs start-up sequence 5  ]o o | 6  INT (Optional)
+// SYNC (Optional)            7 | o o | 8  CLK (Optional)
+// Unassigned                 9 | o o | 10 Gnd
+//                              +-----+
+//
+// Sensor to MCU interface board Pinout
+// =====================================================
+//   PYB-269 Left           Nano        PYB-269 Right
+//  ----------------------  ----------- -------------------------
+//  Rev B,diff Rev A        Left  Right Rev A         Rev B,diff
+//  ---------  -----------  ----  ----- --------      -----------
+//  N/C        INT_Sensor_2 TX1   VIN   VIN 
+//  N/C        INT_Sensor_3 RX0   GND   GND all sensors
+//             N/C          RST   RST   N/C
+//             N/C          GND   5.0v  N/C
+//             BT_2         D2    A7    INT_Sensor_4  N/C
+//             Emit_Sync    D3    A6    BT_5          INT_Sensor_4
+//             SDA          D4    A5    BT_4          INT_Sensor_3
+//             SCL          D5    A4    BT_3          INT_Sensor_2
+//             CS_1         D6    A3    INT_Sensor_1
+//             Sync_microC  D7    A2    N/C
+//             CLK_microC   D8    A1    LED_Ready
+//             BT_0         D9    A0    LED_Running
+//             BT_1         D10   REF   N/C
+//             CS_2         D11   3.3v  VDD all sensors
+//             CS_3         D12   D13   CS_4
+//
+// ******************************************************
+// The default Address for the SMD device is 0x65
+// this is shifted 1 bit to 11001010b; LSB =0, Wr =1, Rd 
+//
+// There are 5 24-bit A-D's (Channels 00 - 04)
+// On single pixel Sensor, data on Channel 2
+// On 2 x 2 pixel Sensor, data on Channel 1-4
+//
+// You can also define the following I2C constants
+// - I2C_FASTMODE = 1, I2C bus up to 400 kHz
+// - I2C_SLOWMODE = 1, I2C bus up to 25 kHz 
+// Table of I2C bus speed in kbit/sec:
+// CPU clock:           1MHz   2MHz    4MHz   8MHz   16MHz   20MHz
+// Fast I2C mode          40     80     150    300     400     400
+// Standard I2C mode      40     80     100    100     100     100
+// Slow I2C mode          25     25      25     25      25      25  
+
+//#define DEBUG                // uncomment to switch on Debug messages
+#define I2C_FASTMODE 1
+//#define eP_i2c  0x65        // Sensor I2C default address
+byte eP_i2c = 0x65;           // Sensor I2C default address
+
+#include "Sensor.h"               // Include Sensor Header
+//#include <Wire.h>
+#include <SoftWire.h>             // Assembly is in "softI2CMaster.h", included by SoftWire.h
+
+// Global Variables
+byte eP_FIFO[EP_FIFO_SZ+1] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // FIFO AND I2C comms buffers 
+byte eP_STATUS = 0xFF;
+
+unsigned long time_1;             // Timing Monitoring counters
+unsigned long time_2;
+
+// Channel Data & counters
+byte eP_Clk_Div = 0;
+byte eP_Pixel   = 1;
+
+byte temp_on; // flag to indicate if channel 0 is set as a temp sensor, or
+
+// General Variables
+//byte error;
+byte CPU_divider ;
+//float Seconds_Passed; // not used
+String keyboard_buffer;
+
+SoftWire Wire = SoftWire();         // Create the Softwire Instance
+
+/*******************************************************************************
+ * Simple LED control macros
+ *******************************************************************************/
+#define RUN_LED_ON   digitalWrite(EP_LED_RUN, LOW)
+#define RUN_LED_OFF  digitalWrite(EP_LED_RUN, HIGH)
+#define RDY_LED_ON   digitalWrite(EP_LED_RDY, LOW)
+#define RDY_LED_OFF  digitalWrite(EP_LED_RDY, HIGH)
+
+// The Sensor CS is a 3V input and the Arduino Nano o/ps are a 5V o/p,
+// so to minimise the strain on the Sesnor, the CS line is only an o/p
+// when driving the line low. To o/p a high, the CP o/p is switched to
+// an i/p, with internal pull up 20k resistor, wich can supply
+// (5V-3V)/20k= 0.1 mA. The ESD clamping dione can pass 100mA max, so 
+// the clamping diode can clamp the i/p CS line with ease.
+#define EZP_DSEL(CS)  digitalWrite((CS),LOW);\
+                      pinMode ((CS), OUTPUT);\
+                      digitalWrite ((CS),LOW);
+                
+#define EZP_SEL(CS) digitalWrite ((CS), 0);\
+                    pinMode ((CS), INPUT_PULLUP);
+//                  pinMode((CS),     OUTPUT); 
+//                  digitalWrite ((CS), HIGH);
+//  PORTD |=  _BV(PD6);                     // toggle CS_1,D6/ PD6, 38x speed of Arduino Code
+//  PORTD &= ~_BV(PD6);                     // Arduino toggle is 4.75us, True C toggle is 0.125us
+//  PORTD |=  _BV(PD6);
+
+/********************************************************************************
+ * Setup function
+ ********************************************************************************/
+void setup(void) {
+  time_1= micros();                       // Start the timer counter
+  temp_on= 1;
+  // Configure the Arduino I/O to talk to the Sensor Breakout Board Backplane
+  pinMode(EP_LED_RUN, OUTPUT);            // Set the "Running" LED
+  pinMode(EP_LED_RDY, OUTPUT);
+//  pinMode(EP_CS1,     OUTPUT);            // Chip Selects for the 4 possible Sensors
+//  pinMode(EP_CS2,     OUTPUT);            //
+//  pinMode(EP_CS3,     OUTPUT);            // 
+//  pinMode(EP_CS4,     OUTPUT);            // 
+  pinMode(A2,         OUTPUT);            // Softserial port Tx line
+  
+  pinMode(EP_INT1,    INPUT_PULLUP);      // Interrupt (INT) is on A3
+    
+//  digitalWrite(EP_CS1, HIGH);             // Ensable all Chip Selects
+//  digitalWrite(EP_CS2, HIGH);             // 
+//  digitalWrite(EP_CS3, HIGH);             // 
+//  digitalWrite(EP_CS4, HIGH);             // 
+//    while(1){}
+EZP_SEL(EP_CS1)
+EZP_DSEL(EP_CS1)
+EZP_SEL(EP_CS1)
+EZP_SEL(EP_CS2)
+EZP_SEL(EP_CS3)
+EZP_SEL(EP_CS4)
+
+  Wire.begin();                           // Start up the Soft i2c bus
+
+  RUN_LED_OFF;
+  RDY_LED_OFF;
+
+  // Chip Sellect Start-up Scenario - CS toggling.
+  // The CS line controls both power and reset at the same time, 
+  // then some of the internal register will not be reset properly. 
+  // The CS sequence should be:
+  //  - CS high, wait at least 5us for 1.8v regulator to come up
+  //  - CS low, wait 0.10us - 10us. The low pulse can be as short as 0.05us. 
+  //    If CS low >100us (~155us) the power supply will drop. 
+  //    Then restart the sequence again.
+  //  - CS high to complete the reset.
+
+  time_2 = micros();
+  while(micros() - time_2 < 10){}  // Force 10 us Hi to ensure stable start - Have gone as low as 5us and still OK
+  
+  // Force the smallest possible Low (Lo/Hi on Chip Select) for stable reset
+  // these are the timings for the Arduino digitalWrite toggle
+  // Div 2^0 @ 16MHz   = 4.122us - Pass (76,800 baud)
+  // Div 2^1 @  8MHz   = 8.375us - Pass (38,400 baud)
+  // Div 2^2 @  4MHz   = 16.75us - Pass (19,200 baud)
+  // Div 2^3 @  2MHz   = 33.5us  - Pass ( 9,600 baud)
+  // Div 2^4 @  1MHz   = 67.0us  - Pass ( 4,800 baud)
+  // Div 2^5 @ 500kHz  = 134us   - Pass ( 2,400 baud)
+  // Div 2^6 @ 250kHz  = 268us   - Fail ( 1,200 baud)
+  // Div 2^7 @ 125kHz  = 536us   - Fail (   600 baud)
+  // Div 2^8 @ 67.5kHz = 1072us  - Fail (   300 baud)
+
+  // Force the smallest possible Low (Lo/Hi on Chip Select) for stable rst ... 
+  // these are the timings for the True C toggle
+  // Div 2^0 @ 16MHz  = 0.125us  - Pass (76,800 baud)
+  // Div 2^1 @ 8MHz    = 0.250us - Pass (38,400 baud)
+  // Div 2^2 @ 4MHz    = 0.500us - Pass (19,200 baud)
+  // Div 2^3 @ 2MHz    = 1.0us   - Pass ( 9,600 baud)
+  // Div 2^4 @ 1 MHz   = 2.0us   - Pass ( 4,800 baud)
+  // Div 2^5 @ 500kHz  = 4.0us   - Pass ( 2,400 baud)
+  // Div 2^6 @ 250kHz  = 8.0us   - Pass ( 1,200 baud)
+  // Div 2^7 @ 125kHz  = 16.0us  - Pass (   600 baud)
+  // Div 2^8 @ 67.5kHz = 32.0us  - Pass (   300 baud)
+//    while(1){}
+  PORTD |=  _BV(PD6);                     // toggle CS_1,D6/ PD6, 38x speed of Arduino Code
+  PORTD &= ~_BV(PD6);                     // Arduino toggle is 4.75us, True C toggle is 0.125us
+  PORTD |=  _BV(PD6);
+//    while(1){}
+  // adjusting the AVR CPU speed
+  CLKPR = 0x80;                           // Tell the AtMega we want to change the system clock
+  CLKPR = 0x00;                           // eg 2^5= 1/32 prescaler= 0.5MHz for a 16MHz crystal
+  CPU_divider = 1;                        // for(i=0 ; i< 0 ; i++){CPU_divider = CPU_divider * 2;}
+  
+  Serial.begin(115200);                   // NB With 1/32 clk (2^5), console is 2,400(0.5 MHz)
+#ifdef DEBUG
+  Serial.println(F("1Debugging Enabled"));
+#endif
+  RUN_LED_ON;
+  Serial.println(); Serial.println(); Serial.println();
+  Serial.println(Revision_Info);
+  Serial.println(F("============================================================"));
+  Serial.println();
+  Start_ASIC();
+
+  printTitleBar();
+  RUN_LED_OFF;
+} // End of Set Up
+
+/*********************************************************************************
+ * Main loop function
+ *********************************************************************************/
+void loop(void){
+  byte OR_Flags   = 0;                    // Byte used to store ch0-ch4 OR in bits 0-4
+  unsigned long channel_0;
+  unsigned long channel_1;
+  unsigned long channel_2;
+  unsigned long channel_3;
+  unsigned long channel_4;
+  //unsigned long channel_sign;
+  unsigned int frame_count;
+  float channel_Temperature=0;
+  static unsigned long dataLine = 0;      // Line count of output data
+
+#ifdef DEBUG
+  Serial.print(F("1Loop count: "));
+  Serial.println(dataLine);
+#endif
+  while (Serial.available() > 0) {        // Check for Serial Input
+#ifdef DEBUG
+  Serial.print(F("1Avail= ")); 
+  Serial.println(Serial.available());
+  Serial.println(F("1data in i/p buffer"));
+#endif
+    keyboard_buffer= Serial.readString(); // Read the keyboard string
+    keyboard_buffer= capsFilterInput(keyboard_buffer);
+//    dumpString(keyboard_buffer);
+#ifdef DEBUG
+    Serial.print(F("1Buff1= ")); Serial.println(keyboard_buffer);
+#endif
+//while(1){};  while (Serial.available()==0) {} 
+
+  processCommand();
+
+//  Serial.println("Hit 'Enter' to continue");
+//  while (Serial.available()==0) {} 
+//  Serial.readString();
+#ifdef DEBUG
+    Serial.print(F("1Buff2= "));   Serial.println(keyboard_buffer);
+    Serial.print(F("1temp_on= ")); Serial.println(temp_on);
+#endif
+  }
+  // *****************************************************************************
+  // Read part of the FIFO & speed things up ? 
+  // (fastest read cycle is 7.42 ms ... sould be able to get to 1ms)
+  // Make a new Version (4.0 ?) for this using FIFO_READ_ACTIVE.
+  //
+  // FIFO_READ_ACTIVE
+  // e.g. if 2 Active Channels (0 & 2) , 8 bytes.
+  // Byte 0 = channel 0 bits 23:16
+  // Byte 1 = channel 0 bits 15:8
+  // Byte 2 = channel 0 bits 7:0
+  // Byte 3 = channel 2 bits 23:16
+  // Byte 4 = channel 2 bits 15:8
+  // Byte 5 = channel 2 bits 7:0
+  // Byte 6 = frame count MSB
+  // Byte 7 = frame count LSB
+  // *****************************************************************************
+  RUN_LED_OFF;
+  // Read the Full 17 byte FIFO
+  eP_cmd_FIFO_read_full(eP_i2c);  //, eP_FIFO[0]);{
+  /* ****** FIFO Structure
+  FIFO_DPF  Data
+  Channel 0:   Byte 0, bits 23-16  Byte 1, bits 15-8  Byte 2, bits 7-0
+  Channel 1:   Byte 3, bits 23-16  Byte 4, bits 15-8  Byte 5, bits 7-0
+  channel 2:   Byte 6, bits 23-16  Byte 7, bits 15-8  Byte 8, bits 7-0
+  channel 3:   Byte 9, bits 23-16  Byte 10,bits 15-8  Byte 11,bits 7-0
+  channel 4:   Byte 12, bits 23-16 Byte 13,bits 15-8  Byte 14,bits 7-0
+  Frame Count: Byte 15,MSB         Byte 16,LSB
+  */
+
+//  OR_Flags=0;
+  if(temp_on){                                                // Temp or Dark Pixel
+    channel_0 = buildChReading (&eP_FIFO[EP_FIFO_CH0]);       // Channel 0, 3 bytes
+    channel_Temperature = -0.026 * channel_0 + 422;    
+#ifdef DEBUG
+    Serial.print(F("1Tp0 Bytes: "));
+#endif  
+  } else {
+    channel_0= buildChReading (&eP_FIFO[EP_FIFO_CH0])/ eP_Clk_Div;            // Channel 0, 3 bytes
+//    OR_Flags = ((EP_OR_MSK& eP_FIFO[EP_FIFO_CH0])>>(7-EP_OR_CH0));        // OR Flag shifted into bit posn, clr other bits
+#ifdef DEBUG
+    Serial.print(F("1Ch0 Bytes: "));
+#endif
+  }
+
+#ifdef DEBUG
+    Serial.print(eP_FIFO[EP_FIFO_CH0]);
+    Serial.print(F(", "));
+    Serial.print(eP_FIFO[EP_FIFO_CH0+1]);
+    Serial.print(F(", "));
+    Serial.print(eP_FIFO[EP_FIFO_CH0+2]);
+    Serial.println();
+#endif
+
+  OR_Flags = ((EP_OR_MSK& eP_FIFO[EP_FIFO_CH0])>>(7-EP_OR_CH0));        // OR Flag shifted into bit posn, clr other bits
+  OR_Flags|= ((EP_OR_MSK& eP_FIFO[EP_FIFO_CH1])>>(7-EP_OR_CH1));        // Over Range Flag shifted into bit position
+  OR_Flags|= ((EP_OR_MSK& eP_FIFO[EP_FIFO_CH2])>>(7-EP_OR_CH2));        // Over Range Flag shifted into bit position
+  OR_Flags|= ((EP_OR_MSK& eP_FIFO[EP_FIFO_CH3])>>(7-EP_OR_CH3));        // Over Range Flag shifted into bit position
+  OR_Flags|= ((EP_OR_MSK& eP_FIFO[EP_FIFO_CH4])>>(7-EP_OR_CH4));        // Over Range Flag shifted into bit position
+
+  channel_1= buildChReading (&eP_FIFO[EP_FIFO_CH1])/ eP_Clk_Div;        // Channel 1, 3 bytes
+  channel_2= buildChReading (&eP_FIFO[EP_FIFO_CH2])/ eP_Clk_Div;        // Channel 2, 3 bytes
+  channel_3= buildChReading (&eP_FIFO[EP_FIFO_CH3])/ eP_Clk_Div;        // Channel 3, 3 bytes
+  channel_4= buildChReading (&eP_FIFO[EP_FIFO_CH4])/ eP_Clk_Div;        // Channel 4, 3 bytes
+ 
+  frame_count= (eP_FIFO[EP_FIFO_FC]<<8)|eP_FIFO[EP_FIFO_FC+1];          // Frame Count, 2 bytes
+
+  // Display the data. It takes ~0.15ms / line to print to screen
+  Serial.print(F(" "));
+  Serial.print(dataLine++);        
+  Serial.print(F("\t  "));
+  if(temp_on){
+    alignNumber((unsigned long)channel_Temperature);        // aligns to DP
+    Serial.print(channel_Temperature, 3);
+  } else{
+    Serial.print("    ");
+    alignNumber(channel_0);
+    Serial.print(channel_0);
+  }
+  Serial.print(F("\t"));
+  alignNumber(channel_1);
+  Serial.print(channel_1);
+  Serial.print(F("\t"));
+  alignNumber(channel_2);
+  Serial.print(channel_2);
+  Serial.print(F("\t"));
+  alignNumber(channel_3);
+  Serial.print(channel_3);
+  Serial.print(F("\t"));
+  alignNumber(channel_4); 
+  Serial.print(channel_4);
+  Serial.print(F("\t      "));
+  alignNumber((unsigned long)frame_count);
+  Serial.print(frame_count);
+  Serial.print(F("\t     "));
+  time_2 = micros();
+  alignNumber((unsigned int)((time_2 - time_1) * CPU_divider));
+  Serial.print((time_2 - time_1) * CPU_divider);
+  time_1 = micros();
+//  if (OR_Flags){
+//    Serial.println(F("\tOver Range"));
+//  } else{
+//    Serial.println(F("\tOK"));
+//  }
+  Serial.print(F("\t"));
+  printHexByte (OR_Flags);
+  Serial.println();
+  if (!writeI2C(eP_i2c, EP_FIFO_RST, 0)) {        // Rst Full FIFO 
+    Serial.println(F("Reset FIFO Error"));        // for next data set
+    while (1);
+  }
+  RUN_LED_OFF;  
+}         // End of Main Loop **************************************************************
+
+/*********************************************************************************
+ * Function printHexByte
+ * Print a byte, b with a leading 0x and a leading 0 if the number to be printed 
+ * is a single digit.
+ *********************************************************************************/
+void printHexByte(byte b){
+  Serial.print (F("0x"));
+  if (b<0xA){ Serial.print (F("0")); }
+  Serial.print (b, HEX);
+}
+
+/*********************************************************************************
+ * Function printTitleBar
+ *********************************************************************************/
+void printTitleBar(void){
+  #ifdef DEBUG
+  Serial.println(F("\tT\tT\tT\tT\tT\tT\tT\tT\tT\tT\tT\tT\tT\tT\tT"));      // Aid to aligning tab stops
+  #endif
+  Serial.print(F("#\sensor Temp\tSen 1\tSen 2\tSen 3\tSen 4\tFrame Count\tT Delta/uS\tOver Range"));
+  Serial.println();
+  Serial.print(F("=================================================================================================="));
+  Serial.println();
+}
+
+/*********************************************************************************
+ * Function processCommand
+ * This routine acts upon the keyboard input
+ *********************************************************************************/
+void processCommand(void){
+  static char fullReset=0;              // ASIC is started in startup function
+  
+  if (keyboard_buffer == "GO"){         // Config & Start ASIC
+    Serial.println(F("Go received"));
+    Start_ASIC();
+    fullReset=0;                        // Enable commands, once ASIC has been started
+
+    Serial.println(F("Sensor Started ..."));
+    printTitleBar();
+  }
+  if (0==fullReset){                        // Disable commands, until ASIC has been started
+
+    eP_cmd_FIFO_read_full(eP_i2c);      //, ep_FIFO[0]);
+    if (keyboard_buffer == "P"){    // Pause the serial port until any keypress 
+      while (!Serial.available()){}
+//    keyboard_buffer = Serial.readString();         
+    }
+    
+    if (keyboard_buffer == "CLR"){              // Clr & Rst serial comms- only works on terminal, not Arduino monitor ...
+      Serial.write(27);                         // ESC
+      Serial.print(F("[2J"));                   // clear screen
+      Serial.write(27);                         // ESC
+      Serial.print(F("[H"));                    // cursor home
+      Serial.println(F("Serial Reset ..."));  
+    }
+    if (keyboard_buffer == "RST F"){            // Full Reset the ASIC
+      if (!writeI2C(eP_i2c, EP_RST_FULL, 0)) { // Send a full Reset
+        Serial.println(F("Write Full Reset Error"));
+        while (1);
+      }
+      fullReset=1;                                // Disable commands, until ASIC has been restarted
+      Serial.println(F("Full Reset ..."));  
+    }
+
+    if (keyboard_buffer == "RST S"){                    // Soft Reset the ASIC
+      if (!writeI2C(eP_i2c, EP_RST_SFT, 0)){ // Send a Soft Reset
+        Serial.println(F("Write Soft Reset Error"));
+        while (1);
+      }
+      Serial.println(F("Soft Reset ..."));  
+    }
+
+/*********************************************************************************
+ * Analog Front End Modification
+ * *******************************************************************************/
+  if (keyboard_buffer== "TEMP ON") {                  // Set the Temperature Monitoring On
+    configAFE (EP_AFE1_TMP_MSK, EP_AFE1_TMP_EN, "Temperature Monitoring On");
+  }
+  if (keyboard_buffer== "TEMP OFF") {                 // Temp Monitoring Off
+    configAFE (EP_AFE1_TMP_MSK, EP_AFE1_TMP_DIS,"Temperature Monitoring Off");
+  }
+    
+    if (keyboard_buffer.charAt(0) == 'S'){              // set the sample rate  
+      Serial.print(F("Clock Divider was = "));
+      Serial.println(eP_Clk_Div);      
+      keyboard_buffer.remove(0, 1);                     // Remove the 'S'
+      eP_Clk_Div = keyboard_buffer.toInt();             // Convert String to Int
+      Serial.print(F("Clock Divider is now = "));
+      Serial.println(eP_Clk_Div);
+      Read_AFE();                                       // Read Analogue Front End 
+      eP_FIFO[0] = (eP_Clk_Div - 1);                    // set the sample rate        
+      Write_AFE();                                      // Write Analogue Front End 
+      Serial.println(F("Sample Rate Set"));
+      Read_AFE();                                       // Read Analogue Front End 
+    } // End If "Sample Rate"
+
+    if (keyboard_buffer == "HPF ON") {                  // Enable High Pass Filter  
+      configAFE (EP_AFE1_HIPASS_FLTR_MSK, EP_AFE1_HIPASS_FLTR_EN, "High Pass Frequency Filter Enabled");
+    }
+    if (keyboard_buffer == "HPF OFF") {                 // Disable High Pass Filter
+       configAFE (EP_AFE1_HIPASS_FLTR_MSK, EP_AFE1_HIPASS_FLTR_DIS, "High Pass Frequency Filter Disabled");
+    }
+
+    if (keyboard_buffer == "PWR LO") {                // Sensor Low Power Mode  
+      configAFE (EP_AFE1_LO_POW_MSK, EP_AFE1_LO_POW_EN, "Low Power Mode Enabled");
+    }
+    if (keyboard_buffer == "PWR HI") {                // Sensor Standard (High) Power Mode  
+      configAFE (EP_AFE1_LO_POW_MSK, EP_AFE1_LO_POW_DIS, "Low Power Mode Disabled");
+    }
+
+    if (keyboard_buffer == "LPF22.5") {               // Set LPF Freq to 22.5Hz
+      configAFE (EP_AFE1_LOPASS_MSK, EP_AFE1_LOPASS_FRQ_022_5, "Low Pass Frequency Filter set to 22.5Hz");
+    }
+    if (keyboard_buffer == "LPF45") {                 // Set LPF Freq to 45Hz
+      configAFE (EP_AFE1_LOPASS_MSK, EP_AFE1_LOPASS_FRQ_045, "Low Pass Frequency Filter set to 45Hz"); 
+    }
+    if (keyboard_buffer == "LPF90") {                 // Set LPF Freq to 90Hz
+      configAFE (EP_AFE1_LOPASS_MSK, EP_AFE1_LOPASS_FRQ_090, "Low Pass Frequency Filter set to 90Hz");
+    }
+    if (keyboard_buffer == "LPF180") {                // Set LPF Freq to 180Hz
+      configAFE (EP_AFE1_LOPASS_MSK, EP_AFE1_LOPASS_FRQ_180, "Low Pass Frequency Filter set to 180Hz");
+    }
+
+/*********************************************************************************
+ * Channel Control Packet (CCP) Modification 
+ *********************************************************************************/
+    if (keyboard_buffer == "PX1") {                   // Single Pixel Sensor
+      eP_Pixel= 1;
+      Read_CCP();                                     // Read the CCP
+      set_CCP();
+      Write_CCP();                                    // Write CCP
+      Serial.println(F("Single Pixel Sensor Set"));
+      Read_CCP();                                     // Read the CCP
+    }
+
+    if (keyboard_buffer == "PX4") {                   // 2x2 Pixel Sensor
+      eP_Pixel= 4;
+      Read_CCP();                                     // Read the CCP
+      set_CCP();
+      Write_CCP();                                    // Write CCP
+      Serial.println(F(" 2x2 Pixel Sensor Set"));
+      Read_CCP();                                     // Read the CCP
+    }
+
+    if (keyboard_buffer == "HPF1") {
+      configCCP (EP_CCP_HPF_MSK, EP_CCP_HP_FLTR1, "High Pass Frequency Filter set to 1Hz");
+    }
+    if (keyboard_buffer == "HPF2") {
+      configCCP (EP_CCP_HPF_MSK, EP_CCP_HP_FLTR2, "High Pass Frequency Filter set to 2Hz");
+    }
+    if (keyboard_buffer == "HPF4") {
+      configCCP (EP_CCP_HPF_MSK, EP_CCP_HP_FLTR4, "High Pass Frequency Filter set to 4Hz");
+    }
+    if (keyboard_buffer == "HPF8") {
+      configCCP (EP_CCP_HPF_MSK, EP_CCP_HP_FLTR8, "High Pass Frequency Filter set to 8Hz");
+    }
+ 
+    if (keyboard_buffer == "T120") {
+      configCCP (EP_CCP_TRNS_MSK, EP_CCP_TRNS_120T, "Transconductance set to 1.2T");
+    }
+    if (keyboard_buffer == "T060") {
+      configCCP (EP_CCP_TRNS_MSK, EP_CCP_TRNS_060T, "Transconductance set to 0.6T");
+    }
+    if (keyboard_buffer == "T030") {
+      configCCP (EP_CCP_TRNS_MSK, EP_CCP_TRNS_030T, "Transconductance set to 0.3T");
+    }
+    if (keyboard_buffer == "T015") {
+      configCCP (EP_CCP_TRNS_MSK, EP_CCP_TRNS_015T, "Transconductance set to 0.15T");
+    }
+    
+    if (keyboard_buffer == "X1"){
+      configCCP (EP_CCP_AMP_MSK, EP_CCP_AMP_01X, "Amplification set to 1x");
+    }
+    if (keyboard_buffer == "X2"){
+      configCCP (EP_CCP_AMP_MSK, EP_CCP_AMP_02X, "Amplification set to 2x");
+    }
+    if (keyboard_buffer == "X4"){
+      configCCP (EP_CCP_AMP_MSK, EP_CCP_AMP_04X, "Amplification set to 4x");
+    }
+    if (keyboard_buffer == "X8"){
+      configCCP (EP_CCP_AMP_MSK, EP_CCP_AMP_08X, "Amplification set to 8x");
+    }
+    if (keyboard_buffer == "X16"){
+      configCCP (EP_CCP_AMP_MSK, EP_CCP_AMP_16X, "Amplification set to 16x");
+    }
+    if (keyboard_buffer == "X32"){
+      configCCP (EP_CCP_AMP_MSK, EP_CCP_AMP_32X, "Amplification set to 32x");
+    }
+    if (keyboard_buffer == "X64"){
+      configCCP (EP_CCP_AMP_MSK, EP_CCP_AMP_64X, "Amplification set to 64x");
+    }
+  }
+  keyboard_buffer ="";
+} // End Serial Port Read
+    
+void configAFE (uint8_t mask, uint8_t setBits, String msg){
+  Read_AFE();                                    // Read the CCP
+  eP_FIFO[1]&= mask;
+  eP_FIFO[1]|= setBits;
+  Write_AFE();                                   // Write CCP
+  Serial.println(msg);
+  Read_AFE();                                    // Read the CCP
+//  Serial.println ("Hit Enter to continue");
+//  while (Serial.available()==0) {} 
+}
+void configCCP (uint8_t mask, uint8_t setBits, String msg){
+  Read_CCP();                                    // Read the CCP
+  eP_FIFO[2]&= mask;
+  eP_FIFO[2]|= setBits;
+  set_CCP();
+  Write_CCP();                                   // Write CCP
+  Serial.println(msg);
+  Read_CCP();                                    // Read the CCP
+//  Serial.println ("Hit Enter to continue");
+//  while (Serial.available()==0) {} 
+}
+/*********************************************************************************
+ * Function Start_ASIC function
+ * Setup & Start the ASIC
+**********************************************************************************/
+void Start_ASIC(void) {
+  byte errorCode, ver;
+
+  Serial.print(F("Starting ASIC: "));
+  errorCode= eP_cmd_start_I2C (eP_i2c);
+  check_error(errorCode);
+
+  ver= eP_cmd_rd_ver(eP_i2c);
+  Serial.print(F("ASIC Version= "));
+  printHexByte(ver);
+  Serial.println();
+  // ***** Write the Analog Front End Packet 
+  // Byte 0 is the Sampling Rate. Sample Rate= 1000/ (N+ 1)
+  // N= 0, Rate= 1000.00; N= 255, Rate= 3.91
+  // Note that when you use this, the number of readings (N+1) get added together
+  // so the full 23 bits of the data packet get used ... 
+  eP_Clk_Div = 10;
+  eP_FIFO[0] = (eP_Clk_Div - 1);
+  // Set AFE Byte 1
+  eP_FIFO[1]=  EP_AFE1_INT_EN| EP_AFE1_TMP_EN| EP_AFE1_LOPASS_FRQ_022_5| EP_AFE1_HIPASS_FLTR_EN;  // En Interrupts, En Temp, LPF, HPF on
+  
+  Write_AFE();                                      // Write AFE
+  Read_AFE();                                       // Read AFE
+  
+  // ***** Write the Channel Control Packet
+  // Set up CCP
+  // Activate Channel 2
+  eP_FIFO[2]|= EP_CCP_EN;
+  eP_FIFO[2]|= EP_CCP_TRNS_015T;                    // Transcond 0.15T
+  eP_FIFO[2]|= EP_CCP_HP_FLTR8;                     // Set HPF to 8 Hz
+
+  if(eP_Pixel == 1){
+    eP_FIFO[2]|= EP_CCP_AMP_01X ;                   // Fb Cap 3200= 1x Amp
+    eP_FIFO[0]= eP_FIFO[2];                         // Ch0 is temp- Activate ch
+  } else{
+    eP_FIFO[2]|= EP_CCP_AMP_16X ;  
+    eP_FIFO[0]= eP_FIFO[2];                         // Ch0 is temp- Activate ch
+    eP_FIFO[1]= eP_FIFO[2];                         // Channel 1 Activated 
+    eP_FIFO[3]= eP_FIFO[2];                         // Channel 3 Activated
+    eP_FIFO[4]= eP_FIFO[2];                         // Channel 4 Activated
+  }
+  
+  set_CCP();
+  Write_CCP();                                      // Write CCP
+  Read_CCP();                                       // Read CCP
+
+  eP_i2c= cP_cmd_set_I2C_addr(eP_i2c, 0x65);      //, eP_FIFO[0]);
+  Serial.print(F("I2C Addr set to = 0x"));
+  Serial.println(eP_i2c, HEX);
+
+  if (!writeI2C(eP_i2c, EP_FIFO_RST, 0)) {            // Reset the full FIFO
+    Serial.println(F("Reset FIFO Error"));
+    while (1);
+  }
+  Serial.println();
+}
+
+//################################# I2C: basic I2C ###############################
+/*********************************************************************************
+ * readI2C function
+ * Standard READ routine
+ *********************************************************************************/
+boolean readI2C(byte addr, byte command, byte data_count) {
+  byte i;
+  boolean  result=true;
+  Wire.beginTransmission(addr);
+  Wire.write(command);
+  if (Wire.endTransmission(false) != 0) result= false;
+  Wire.requestFrom(eP_i2c, data_count);
+  for (i = 0 ; i < data_count ; i++){
+    eP_FIFO[i] = Wire.read();
+  }
+  return result;
+} // End of Read I2C
+
+/*********************************************************************************
+ * function
+ * Standard WRITE routine
+ *********************************************************************************/
+boolean writeI2C(byte addr, byte command, byte data_count) {
+  byte i;
+  Wire.beginTransmission(addr);
+  Wire.write(command);
+  for (i = 0 ; i < data_count ; i++){
+    Wire.write(eP_FIFO[i]);
+  }
+  return true;
+} // End of Write I2C
+
+/*********************************************************************************
+ * Function set_CCP
+ * Set the CCP depending on single or 2x2 sensor
+ * Activate Channel 1 , 2, 3 , 4 (4-pixel device)
+ *********************************************************************************/
+void set_CCP(){
+  eP_FIFO[0] = eP_FIFO[2];
+  eP_FIFO[1] = eP_FIFO[2];
+  eP_FIFO[3] = eP_FIFO[2];
+  eP_FIFO[4] = eP_FIFO[2];
+
+  if(eP_Pixel != 4){  
+    eP_FIFO[1]&= ~EP_CCP_EN;
+    eP_FIFO[3]&= ~EP_CCP_EN;
+    eP_FIFO[4]&= ~EP_CCP_EN;
+  }
+} // End of Set CCP
+
+//################################# eP_cmd: Sensor commands ######################
+
+/*********************************************************************************
+ * Function 
+ * Start I2C bus and test for presence of device
+**********************************************************************************/
+byte eP_cmd_start_I2C (byte addr){
+  byte result;
+  
+  Wire.beginTransmission(addr);                           // Check the device is on the i2C bus at 0x65
+  result = Wire.endTransmission();
+  return result;
+}
+
+/*********************************************************************************
+ * Function read version number
+ * Get the version number of the ezPyro ASIC
+**********************************************************************************/
+  byte eP_cmd_rd_ver (byte addr){
+    if (!readI2C(addr, EP_VER, 1)) {                // Read the chip Version 
+      Serial.println(F("Read Version Error"));
+      while (1);
+    }
+    return eP_FIFO[0];
+  }
+
+/*********************************************************************************
+ * Function set I2C address
+ * set the I2C address to a new address
+**********************************************************************************/
+byte cP_cmd_set_I2C_addr( byte addr, byte new_addr){
+//, byte *buff){
+//  buff= new_addr<< 1;                             // Shift 7 LSB to 7 MSB
+  eP_FIFO[0]= new_addr<<1;
+  if (!writeI2C(addr, EP_ADDR_WR, 1)) {           // Change the Address 
+    Serial.println(F("Write Set Addr Error"));
+    while (1);
+  }
+  return new_addr;
+}
+
+/*********************************************************************************
+ * Function eP_cmd_FIFO_reaed_full
+ * read a full 17 bytes from the ezPyro's ASIC's FIFO
+ *********************************************************************************/
+void eP_cmd_FIFO_read_full (byte addr){   //, byte *buff) {
+  while(!readI2C(addr, EP_FIFO_RD_FULL, EP_FIFO_SZ)){}    // Loop til Sensor is ready to take cmd
+}
+
+/*********************************************************************************
+ * Function check_error
+ * Error Codes from I2C bus communication
+ * byte, which indicates the status of the transmission:
+ * 0: success
+ * 1: data too long to fit in transmit buffer
+ * 2: received NACK on transmit of address
+ * 3: received NACK on transmit of data
+ * 4: other error
+ *********************************************************************************/
+void check_error(byte error){
+  Serial.println();
+  if (error== ERR_OK) {
+//    Serial.print(F("Good Tx")); // 'F' puts string in flash 
+  } else if (error== ERR_LON_DATA) {
+    Serial.print(F("Data too long to fit in tx buffer"));
+  } else if (error== ERR_NAK_ADDR) {
+    Serial.print(F("Rxed NACK on tx of addr"));
+  } else if (error== ERR_NAK_DATA) {
+    Serial.print(F("Rxed NACK on tx of data"));
+  } else if (error== ERR_UNKNOWN){
+    Serial.print(F("Unknown error1"));
+  } else{
+    Serial.print(F("Unknown error2- "));
+    Serial.print(error);
+  }
+  if (error!= ERR_OK) {
+    PRINT2HEX (" at addr 0x", eP_i2c); // Print address, if there is an error
+  }
+} // End of Error Checking
+
+/*********************************************************************************
+ * Function Read_AFE
+ * AFE= Analogue Front End
+ *********************************************************************************/
+void Read_AFE(void) {
+  byte i;
+  if (!readI2C(eP_i2c, EP_AFE_RD, EP_AFE_SZ)) {     // Read AFE
+    Serial.println(F("Read AFE Error"));
+    while (1);
+  }
+  Serial.print(F("AFE= "));               // Print out the contents of the AFE
+  for (i= 0; i< EP_AFE_SZ; i++){
+    if (i!=0) {Serial.print(F(", "));}    // No comma before the 1st number
+    printHexByte(eP_FIFO[i]);
+  }
+  Serial.println();  
+}
+
+/*********************************************************************************
+ * Function Write_AFE
+ *********************************************************************************/
+void Write_AFE(void){
+  if (!writeI2C(eP_i2c, EP_AFE_WR, EP_AFE_SZ)) {   // Write AFE
+    Serial.println(F("Write AFE Error"));
+    while (1);
+  }
+}
+
+/*********************************************************************************
+ * Function Read_CCP
+ * CCP= Channel Control Packet
+ *********************************************************************************/
+void Read_CCP(void){
+  byte i;
+  if (!readI2C(eP_i2c, EP_CCP_RD, EP_CCP_SZ)) {   // Read the CCP 
+    Serial.println(F("Read CCP Error"));
+    while (1);
+  }
+  Serial.print(F("CCP= "));               // Print out the contents of the CCP
+  for (i= 0; i< EP_CCP_SZ; i++){
+    if (i!=0){ Serial.print(F(", "));}    // No comma before the 1st number
+     printHexByte(eP_FIFO[i]);
+  }
+  Serial.println();
+}
+
+/*********************************************************************************
+ * Function Write_CCP
+ *********************************************************************************/
+void Write_CCP(void){
+  if (!writeI2C(eP_i2c, EP_CCP_WR, EP_CCP_SZ)) { // Write the CCP
+    Serial.println(F("Write CCP Error"));
+    while (1);
+  }
+}
+
+/*********************************************************************************
+ * Function Write_block
+ *********************************************************************************/
+/*boolean writeBlock(Addr, Buffer, ByteCount){
+  boolean result=true;
+  if (!writeI2C(Addr, Buffer, ByteCount)) result=false;}
+  return result;
+}
+*/
+
+/*********************************************************************************
+ * Function Align Number
+ * padds spaces, so numbers are decimal point aligned. up to 99,999.
+ *********************************************************************************/
+void alignNumber(unsigned long num2align){
+  unsigned long int iloop;
+  if (num2align==0) {num2align=1;}
+  for (iloop=num2align; iloop < 10000; iloop=iloop*10){
+    Serial.print(F(" "));
+  }
+}
+
+/*********************************************************************************
+ * Function buildChReading
+ * build thereading from the 3 bytes in the FIFO array
+ *********************************************************************************/
+unsigned long buildChReading (byte *currentByte){
+  return (((unsigned long)(0x7f&(*currentByte))  <<16)|
+          ((unsigned long)      (*(currentByte+1))<<8)|
+          ((unsigned long)      (*(currentByte+2)))  );
+}
+
+/*********************************************************************************************
+ * Capitalise text and strip CR/LF                                                           */
+String capsFilterInput(String msg){
+  String op;
+  
+  msg.toUpperCase();              // Convert to upper case
+  for (uint8_t i=0; i< msg.length(); i++){
+    if((msg[i]!='\n')&& (msg[i]!='\r')&& (msg[i]!='\0')) {op+=msg[i];}
+  }
+  return(op);
+}
+
+/*********************************************************************************************/
+void dumpString(String str){
+uint8_t i;
+  PRINT2("dumpStr: ", str.length());
+  for(i=0;i< str.length(); i++){
+    Serial.print(", "); Serial.print(str[i]);
+  }
+  PRINT2("\n % ",str); 
+}

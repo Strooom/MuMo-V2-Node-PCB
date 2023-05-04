@@ -12,5 +12,10 @@ The related firmware for this device can be found in https://github.com/Strooom/
 
 ![PCB Render Top view](https://github.com/Strooom/MuMo-V2-Node-PCB/blob/main/PCB%203D%20view%20Top.PNG "PCB Render Top view")
 
+![PCB Backside Functional Blocks](https://github.com/Strooom/MuMo-V2-Node-PCB/blob/main/MuMo%20PCB%20Functional%20Blocks-Back.png "PCB Backside Functional Blocks")
+
+![PCB Frontside Functional Blocks](https://github.com/Strooom/MuMo-V2-Node-PCB/blob/main/MuMo%20PCB%20Functional%20Blocks-Front.png "PCB Frontside Functional Blocks")
+
+
 More info can be found in the Wiki : 
 https://github.com/Strooom/MuMo-V2-Node-PCB/wiki

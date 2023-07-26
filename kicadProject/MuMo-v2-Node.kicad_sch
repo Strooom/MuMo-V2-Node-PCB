@@ -1051,7 +1051,7 @@
         )
       )
     )
-    (symbol "thisProjectLibrary:Connector 2p Battery" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+    (symbol "thisProjectLibrary:Connector 2p Battery" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
       (property "Reference" "CONN" (at 0 2.54 0)
         (effects (font (size 1.27 1.27)))
       )

@@ -1,3 +1,6 @@
 (sym_lib_table
+  (version 7)
   (lib (name "thisProjectLibrary")(type "KiCad")(uri "${KIPRJMOD}/libraries/thisProjectLibrary.kicad_sym")(options "")(descr ""))
+  (lib (name "conn_01x24")(type "KiCad")(uri "C:/Users/pasca/Desktop/conn_01x24.kicad_sym")(options "")(descr ""))
+  (lib (name "tsl2591")(type "KiCad")(uri "C:/Users/pasca/Desktop/tsl2591.kicad_sym")(options "")(descr ""))
 )
